@@ -6,6 +6,12 @@ module.exports = {
       {
         root: ['./src'],
         extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        alias: {
+          icons: './assets/icons',
+          logos: './assets/logos',
+          images: './assets/images',
+          objects: './assets/objects',
+        },
       },
     ],
   ],
