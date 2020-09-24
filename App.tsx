@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { FrontPage } from 'pages'
+import { LogInPage } from 'pages'
+import { RootStackNavigator } from 'navigation'
 
 const Stack = createStackNavigator()
 
@@ -10,8 +11,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="FrontPage"
-          component={FrontPage}
+          name="LogInPage"
+          component={LogInPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="RootStackNavigator"
+          component={RootStackNavigator}
           options={{
             headerShown: false,
           }}
