@@ -86,6 +86,7 @@ export default function MainTabBar({ state, descriptors, navigation }) {
 
         return (
           <TouchableOpacity
+            key={route.key}
             accessibilityRole="button"
             accessibilityStates={isFocused ? ['selected'] : []}
             accessibilityLabel={options.tabBarAccessibilityLabel}

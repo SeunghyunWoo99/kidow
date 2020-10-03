@@ -213,7 +213,13 @@ export default function ReviewPage() {
           잘 모르겠어요
         </Text>
         {UNKNOWN_WORDS.map((item, index) => (
-          <WordContainer wordData={item} index={index} onSelected={onWordSelected} onDeselected={onWordDeselected} />
+          <WordContainer
+            key={item.id}
+            wordData={item}
+            index={index}
+            onSelected={onWordSelected}
+            onDeselected={onWordDeselected}
+          />
         ))}
         <Text
           style={{
