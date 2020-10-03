@@ -13,38 +13,40 @@ export default {
     hint: '#bbbbbb',
     /** #ffffff white: ![](https://www.colorhexa.com/ffffff.png) */
     white: '#ffffff',
-    /** 앱 메인 어두운 남색 색상 ![](https://www.colorhexa.com/446878.png) */
-    mainDark: '#446878',
-    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fef4e8.png) */
-    mainLight: '#fef4e8',
+    /** 앱 메인 주황색 ![](https://www.colorhexa.com/ffbf09.png) */
+    mainDark: '#ffbf09',
+    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
+    mainLight: '#fdf7da',
   },
 
   /** #eeeeee veryLightPinkTwo: ![](https://www.colorhexa.com/eeeeee.png) */
   divider: '#eeeeee',
   /** 버튼 색상 */
   button: {
-    /** 앱 메인 어두운 남색 색상 ![](https://www.colorhexa.com/446878.png) */
-    mainDark: '#446878',
-    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fef4e8.png) */
-    mainLight: '#fef4e8',
+    /** 앱 메인 주황색 ![](https://www.colorhexa.com/ffbf09.png) */
+    mainDark: '#ffbf09',
+    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
+    mainLight: '#fdf7da',
+    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/7695a3.png) */
+    mainDarkDisabled: '#7695a3',
   },
   /** 배경 색상 */
   background: {
-    /** 앱 메인 어두운 남색 색상 ![](https://www.colorhexa.com/446878.png) */
-    mainDark: '#446878',
-    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fef4e8.png) */
-    mainLight: '#fef4e8',
+    /** 앱 메인 주황색 ![](https://www.colorhexa.com/ffbf09.png) */
+    mainDark: '#ffbf09',
+    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
+    mainLight: '#fdf7da',
     /** #ffffff whiteTwo: ![](https://www.colorhexa.com/ffffff.png) */
     white: '#ffffff',
     /** #fafafa iOS 디폴트 컬러: ![](https://www.colorhexa.com/fafafa.png) */
-    default: '#fafafa',
+    default: '#fcf7f0',
   },
 
   /** 기타 색상들 */
   palette: {
-    /** 앱 메인 어두운 남색 색상 ![](https://www.colorhexa.com/446878.png) */
-    mainDark: '#446878',
-    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fef4e8.png) */
-    mainLight: '#fef4e8',
+    /** 앱 메인 주황색 ![](https://www.colorhexa.com/ffbf09.png) */
+    mainDark: '#ffbf09',
+    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
+    mainLight: '#fdf7da',
   },
 }
