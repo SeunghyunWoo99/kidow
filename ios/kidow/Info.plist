@@ -55,7 +55,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BMJUA_ttf.ttf</string>
+		<string>BMJUA.ttf</string>
 	</array>
 </dict>
 </plist>
