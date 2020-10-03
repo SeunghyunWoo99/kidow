@@ -11,6 +11,7 @@ module.exports = {
           logos: './assets/logos',
           images: './assets/images',
           objects: './assets/objects',
+          fonts: './assets/fonts',
         },
       },
     ],

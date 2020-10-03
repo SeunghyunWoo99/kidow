@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* kidowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* kidowTests.m */; };
 		5E1BCBFEA40B1DDBF01D65FA /* libPods-kidow-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D506038E004F711894144E2 /* libPods-kidow-tvOS.a */; };
+		810ACFEA25288D69004D8418 /* BMJUA_ttf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 810ACFE925288D69004D8418 /* BMJUA_ttf.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BE6BC8D5895AFF710231805F /* libPods-kidow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC85F0E026D136DB391815 /* libPods-kidow.a */; };
 		D7194F33F1532964852EA9E7 /* libPods-kidow-kidowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 371B66957BB061E105CF4891 /* libPods-kidow-kidowTests.a */; };
@@ -45,6 +46,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* kidowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kidowTests.m; sourceTree = "<group>"; };
 		0D506038E004F711894144E2 /* libPods-kidow-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kidow-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DEC15327B0543468C1E21D8 /* BMJUA_ttf.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BMJUA_ttf.ttf; path = ../assets/fonts/BMJUA_ttf.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* kidow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kidow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = kidow/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = kidow/AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		371B66957BB061E105CF4891 /* libPods-kidow-kidowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kidow-kidowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4458F85E25D8FB343E4FE2B6 /* Pods-kidow-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kidow-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-kidow-tvOSTests/Pods-kidow-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		747DE121013D3CE60F20EAEA /* Pods-kidow-kidowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kidow-kidowTests.debug.xcconfig"; path = "Target Support Files/Pods-kidow-kidowTests/Pods-kidow-kidowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		810ACFE925288D69004D8418 /* BMJUA_ttf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BMJUA_ttf.ttf; path = ../assets/fonts/BMJUA_ttf.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = kidow/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8675093D411B7013CC54C15A /* Pods-kidow-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kidow-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-kidow-tvOS/Pods-kidow-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9CB961F346B3221247CF3523 /* Pods-kidow-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kidow-tvOS.release.xcconfig"; path = "Target Support Files/Pods-kidow-tvOS/Pods-kidow-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,12 +162,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				810ACFE925288D69004D8418 /* BMJUA_ttf.ttf */,
 				13B07FAE1A68108700A75B9A /* kidow */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* kidowTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				9B50ECB28A2748BBD64C2B52 /* Pods */,
+				AD9BFBFDE0A8483E8AF20F75 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -194,8 +199,15 @@
 				F2CA987FFF93D161348AAB9C /* Pods-kidow-tvOSTests.debug.xcconfig */,
 				4458F85E25D8FB343E4FE2B6 /* Pods-kidow-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD9BFBFDE0A8483E8AF20F75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0DEC15327B0543468C1E21D8 /* BMJUA_ttf.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810ACFEA25288D69004D8418 /* BMJUA_ttf.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
