@@ -1,8 +1,10 @@
 import React from 'react'
-import { Button } from 'react-native'
+import { Button, Image } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/native'
 import { MainTabNavigator } from 'navigation'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { color, size } from 'common'
 
 const Stack = createStackNavigator()
 
@@ -15,10 +17,24 @@ export default function MainStackNavigator() {
         name="MainTabNavigator"
         component={MainTabNavigator}
         options={{
-          headerTitle: '',
-          headerTitleAlign: 'center',
-          headerLeft: () => <Button title={'Settings'} onPress={() => navigation.navigate('SettingStackNavigator')} />,
-          headerRight: () => <Button title={'Profile'} onPress={() => navigation.navigate('ProfileStackNavigator')} />,
+          headerTitle: () => null,
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('SettingStackNavigator')}>
+              <Image
+                source={require('icons/settings.png')}
+                style={{ width: 30 * size.widthRate, height: 30 * size.widthRate, margin: 24 * size.widthRate }}
+              />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('ProfileStackNavigator')}>
+              <Image
+                source={require('icons/profile.png')}
+                style={{ width: 30 * size.widthRate, height: 30 * size.widthRate, margin: 24 * size.widthRate }}
+              />
+            </TouchableOpacity>
+          ),
         }}
       />
     </Stack.Navigator>
