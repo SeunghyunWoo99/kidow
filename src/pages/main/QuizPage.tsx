@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import { Text, View, ImageBackground, Pressable, Image } from 'react-native'
 import { size, color } from 'common'
 
-function ResultIcon(isCorrect: boolean) {
+interface ResultIconProps {
+  isCorrect: boolean
+}
+
+function ResultIcon({ isCorrect }: ResultIconProps) {
   return (
     <View style={{ position: 'absolute', bottom: 60 * size.heightRate }}>
       {isCorrect ? (
@@ -22,6 +26,7 @@ function ResultIcon(isCorrect: boolean) {
 
 export default function QuizPage() {
   const [isAnswered, setIsAnswered] = useState(false)
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -56,12 +61,17 @@ export default function QuizPage() {
               textShadowOffset: { width: 1, height: 1 },
               textShadowRadius: -2 * size.widthRate,
             }}>
-            바나나
+            사과
           </Text>
         </View>
       </ImageBackground>
-      {isAnswered && <ResultIcon isCorrect={true} />}
-      <Pressable onPress={() => setIsAnswered((prev) => !prev)} style={{ position: 'absolute', left: 20, bottom: 10 }}>
+      {isAnswered && <ResultIcon isCorrect={isAnswerCorrect} />}
+      <Pressable
+        onPress={() => {
+          setIsAnswered((prev) => !prev)
+          setIsAnswerCorrect(Math.random() > 0.5)
+        }}
+        style={{ position: 'absolute', left: 20, bottom: 10 }}>
         <Text>Toggle Result Icon</Text>
       </Pressable>
     </View>
