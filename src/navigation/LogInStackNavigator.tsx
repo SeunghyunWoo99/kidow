@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { LogInPage } from 'pages'
+import { PhoneNumberInput, PhoneNumberAuth } from 'pages'
 import { Svg, Path } from 'react-native-svg'
 import { color, size } from 'common'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -30,10 +30,23 @@ export default function LogInStackNavigator() {
   const navigation = useNavigation()
 
   return (
-    <Stack.Navigator initialRouteName="LogInPage">
+    <Stack.Navigator initialRouteName="PhoneNumberInput">
       <Stack.Screen
-        name="LogInPage"
-        component={LogInPage}
+        name="PhoneNumberInput"
+        component={PhoneNumberInput}
+        options={{
+          headerTitle: () => null,
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Back />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="PhoneNumberAuth"
+        component={PhoneNumberAuth}
         options={{
           headerTitle: () => null,
           headerTransparent: true,

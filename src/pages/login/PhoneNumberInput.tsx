@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, Text, View, TextInput, Keyboard } from 'react-native'
+import { KeyboardAvoidingView, Text, View, TextInput, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { color, size } from 'common'
 import { BottomButton } from 'components'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
-export default function LogInPage() {
+export default function PhoneNumberInput() {
+  const navigation = useNavigation()
   const [value, onChangeText] = useState('')
 
   return (
@@ -66,7 +67,11 @@ export default function LogInPage() {
           />
         </View>
       </TouchableWithoutFeedback>
-      <BottomButton label={'인증번호 받기'} isDisabled={value.length !== 11} onPress={() => {}} />
+      <BottomButton
+        label={'인증번호 받기'}
+        isDisabled={value.length !== 11}
+        onPress={() => navigation.navigate('PhoneNumberAuth')}
+      />
     </KeyboardAvoidingView>
   )
 }
