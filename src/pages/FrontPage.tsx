@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, Button, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { size, color } from 'common'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -42,7 +42,7 @@ export default function FrontPage() {
             로그인 하기
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('RootStackNavigator')}>
+        <TouchableOpacity onPress={() => {}}>
           <Text
             style={{
               fontSize: size.normalizeFontSize(14),
@@ -59,6 +59,13 @@ export default function FrontPage() {
           </Text>
         </TouchableOpacity>
       </View>
+      <Pressable
+        onPress={() => {
+          navigation.navigate('RootStackNavigator')
+        }}
+        style={{ position: 'absolute', left: 20, bottom: 10 }}>
+        <Text>Main</Text>
+      </Pressable>
     </View>
   )
 }
