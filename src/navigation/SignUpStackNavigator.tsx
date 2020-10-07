@@ -2,12 +2,12 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { PhoneNumberInput, PhoneNumberAuth } from 'pages'
+import { PhoneNumberInput, PhoneNumberAuth, NameInput, AgeInput } from 'pages'
 import { Back } from 'icons'
 
 const Stack = createStackNavigator()
 
-export default function LogInStackNavigator() {
+export default function SignUpStackNavigator() {
   const navigation = useNavigation()
 
   return (
@@ -28,6 +28,32 @@ export default function LogInStackNavigator() {
       <Stack.Screen
         name="PhoneNumberAuth"
         component={PhoneNumberAuth}
+        options={{
+          headerTitle: () => null,
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Back />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="NameInput"
+        component={NameInput}
+        options={{
+          headerTitle: () => null,
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Back />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="AgeInput"
+        component={AgeInput}
         options={{
           headerTitle: () => null,
           headerTransparent: true,

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, Text, View, TextInput, Keyboard } from 'react-native'
+import { KeyboardAvoidingView, Text, View, TextInput, Keyboard, TouchableWithoutFeedback, Alert } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { color, size } from 'common'
 import { BottomButton } from 'components'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
-export default function LogInPage() {
+export default function NameInput() {
+  const navigation = useNavigation()
   const [value, onChangeText] = useState('')
 
   return (
@@ -26,34 +27,23 @@ export default function LogInPage() {
               color: color.text.primary1,
               marginBottom: 72 * size.heightRate,
             }}>
-            내 전화번호
+            아이 이름
           </Text>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text
-              style={{
-                fontFamily: 'BMJUA',
-                fontSize: size.normalizeFontSize(14),
-                color: color.text.primary1,
-                textAlign: 'center',
-                marginRight: 24 * size.widthRate,
-              }}>
-              +82
-            </Text>
             <TextInput
               style={{
-                width: 300 * size.widthRate,
+                width: 280 * size.widthRate,
                 height: 40 * size.widthRate,
                 borderRadius: 8 * size.widthRate,
                 borderColor: color.palette.black4,
                 fontFamily: 'BMJUA',
-                fontSize: size.normalizeFontSize(16),
+                fontSize: size.normalizeFontSize(18),
                 letterSpacing: 0.5 * size.widthRate,
                 color: color.text.primary1,
               }}
-              placeholder={'01055269969'}
+              placeholder={'홍길동'}
               onChangeText={(text) => onChangeText(text)}
               value={value}
-              keyboardType={'number-pad'}
             />
           </View>
           <View
@@ -66,7 +56,7 @@ export default function LogInPage() {
           />
         </View>
       </TouchableWithoutFeedback>
-      <BottomButton label={'인증번호 받기'} isDisabled={value.length !== 11} onPress={() => {}} />
+      <BottomButton label={'다음'} isDisabled={value === ''} onPress={() => navigation.navigate('AgeInput')} />
     </KeyboardAvoidingView>
   )
 }

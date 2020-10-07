@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { KeyboardAvoidingView, Text, View, Keyboard } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input'
 import { color, size } from 'common'
 import { BottomButton } from 'components'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
 export default function PhoneNumberAuth() {
+  const navigation = useNavigation()
   const [code, setCode] = useState('')
 
   return (
@@ -68,7 +70,7 @@ export default function PhoneNumberAuth() {
           </Text>
         </View>
       </TouchableWithoutFeedback>
-      <BottomButton label={'로그인'} isDisabled={code.length !== 4} onPress={() => {}} />
+      <BottomButton label={'로그인'} isDisabled={code.length !== 4} onPress={() => navigation.navigate('NameInput')} />
     </KeyboardAvoidingView>
   )
 }

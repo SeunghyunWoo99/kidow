@@ -19,7 +19,7 @@ export default function FrontPage() {
           style={{
             width: 280 * size.widthRate,
             height: 60 * size.widthRate,
-            borderRadius: 20 * size.widthRate,
+            borderRadius: 12 * size.widthRate,
             backgroundColor: color.button.mainDark,
             justifyContent: 'center',
             alignItems: 'center',
@@ -42,7 +42,7 @@ export default function FrontPage() {
             로그인 하기
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUpStackNavigator')}>
           <Text
             style={{
               fontSize: size.normalizeFontSize(14),
