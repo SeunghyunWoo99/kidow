@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, Text, View, TextInput, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { KeyboardAvoidingView, Text, View, TextInput, Keyboard, TouchableWithoutFeedback, Alert } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { color, size } from 'common'
 import { BottomButton } from 'components'
@@ -70,7 +70,17 @@ export default function PhoneNumberInput() {
       <BottomButton
         label={'인증번호 받기'}
         isDisabled={value.length !== 11}
-        onPress={() => navigation.navigate('PhoneNumberAuth')}
+        onPress={() =>
+          Alert.alert('핸드폰 번호 확인', '다음 번호로 인증 코드가 전송됩니다.\n+821055269969', [
+            {
+              text: '취소',
+            },
+            {
+              text: '확인',
+              onPress: () => navigation.navigate('PhoneNumberAuth'),
+            },
+          ])
+        }
       />
     </KeyboardAvoidingView>
   )
