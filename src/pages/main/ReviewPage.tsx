@@ -3,6 +3,8 @@ import { View, ImageBackground, Text, ScrollView, SafeAreaView, TouchableOpacity
 import { format } from 'date-fns'
 import { color, size } from 'common'
 
+const THRESHOLD_NUMBER_OF_SELECTED_CARDS = 5
+
 const randomColors = ['#ffbf09', '#8A5E70', '#5BAD90']
 
 const UNKNOWN_WORDS: WordDataType[] = [
@@ -186,7 +188,7 @@ export default function ReviewPage() {
   }, [])
 
   useEffect(() => {
-    setButtonDisabled(selectedWords.length < 10)
+    setButtonDisabled(selectedWords.length < THRESHOLD_NUMBER_OF_SELECTED_CARDS)
   }, [selectedWords.length])
 
   return (
@@ -245,38 +247,6 @@ export default function ReviewPage() {
         ))}
         <View style={{ marginBottom: 80 * size.widthRate }} />
       </ScrollView>
-      {/* <ImageBackground
-        source={require('images/learningCamera.png')}
-        style={{ width: size.screenWidth, height: size.screenHeight, justifyContent: 'center', alignItems: 'center' }}>
-        <View
-          style={{
-            backgroundColor: color.background.mainLight,
-            width: 280,
-            height: 180,
-            borderRadius: 12,
-            borderWidth: 4,
-            shadowOpacity: 0.7,
-            shadowColor: 'rgb(100, 100, 100)',
-            shadowRadius: 10,
-            shadowOffset: {
-              width: 3,
-              height: 5,
-            },
-            justifyContent: 'center',
-            alignItems: 'center',
-            bottom: 150 * size.heightRate,
-          }}>
-          <Text
-            style={{
-              fontSize: size.normalizeFontSize(64),
-              color: color.text.primary1,
-              fontWeight: 'bold',
-              textAlign: 'center',
-            }}>
-            바나나
-          </Text>
-        </View>
-      </ImageBackground> */}
       <TouchableOpacity
         style={{
           width: 160 * size.widthRate,
@@ -309,6 +279,48 @@ export default function ReviewPage() {
           복습 하기
         </Text>
       </TouchableOpacity>
+      {/* <ImageBackground
+        source={require('images/learningCamera.png')}
+        style={{
+          position: 'absolute',
+          width: size.screenWidth,
+          height: size.screenHeight,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <View
+          style={{
+            backgroundColor: color.background.mainLight,
+            width: 200 * size.widthRate,
+            height: 100 * size.widthRate,
+            borderRadius: 24 * size.widthRate,
+            // borderWidth: 4 * size.widthRate,
+            shadowOpacity: 0.7,
+            shadowColor: 'rgb(100, 100, 100)',
+            shadowRadius: 10 * size.widthRate,
+            shadowOffset: {
+              width: 3 * size.widthRate,
+              height: 5 * size.widthRate,
+            },
+            justifyContent: 'center',
+            alignItems: 'center',
+            bottom: 150 * size.heightRate,
+          }}>
+          <Text
+            style={{
+              fontFamily: 'BMJUA',
+              fontSize: size.normalizeFontSize(48),
+              color: color.text.primary1,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              textShadowColor: '#333',
+              textShadowOffset: { width: 1, height: 1 },
+              textShadowRadius: -2 * size.widthRate,
+            }}>
+            바나나
+          </Text>
+        </View>
+      </ImageBackground> */}
     </SafeAreaView>
   )
 }

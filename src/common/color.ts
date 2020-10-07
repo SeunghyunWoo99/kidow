@@ -27,8 +27,8 @@ export default {
     mainDark: '#ffbf09',
     /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
     mainLight: '#fdf7da',
-    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/f0d381.png) */
-    mainDarkDisabled: '#edc964',
+    /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/d4c8a7.png) */
+    mainDarkDisabled: '#d4c8a7',
   },
   /** 배경 색상 */
   background: {
