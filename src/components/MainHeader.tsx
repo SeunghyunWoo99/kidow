@@ -16,13 +16,23 @@ export default function MainHeader() {
       <TouchableOpacity onPress={() => navigation.navigate('SettingStackNavigator')}>
         <Image
           source={require('icons/settings.png')}
-          style={{ width: 30 * size.widthRate, height: 30 * size.widthRate, margin: 24 * size.widthRate }}
+          style={{
+            width: 30 * size.widthRate,
+            height: 30 * size.widthRate,
+            marginHorizontal: 24 * size.widthRate,
+            marginVertical: 40 * size.heightRate,
+          }}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('ProfileStackNavigator')}>
         <Image
           source={require('icons/profile.png')}
-          style={{ width: 30 * size.widthRate, height: 30 * size.widthRate, margin: 24 * size.widthRate }}
+          style={{
+            width: 30 * size.widthRate,
+            height: 30 * size.widthRate,
+            margin: 24 * size.widthRate,
+            marginVertical: 40 * size.heightRate,
+          }}
         />
       </TouchableOpacity>
     </LinearGradient>

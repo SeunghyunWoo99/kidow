@@ -3,6 +3,8 @@ import { View, ImageBackground, Text, ScrollView, SafeAreaView, TouchableOpacity
 import { format } from 'date-fns'
 import { color, size } from 'common'
 
+const THRESHOLD_NUMBER_OF_SELECTED_CARDS = 5
+
 const randomColors = ['#ffbf09', '#8A5E70', '#5BAD90']
 
 const UNKNOWN_WORDS: WordDataType[] = [
@@ -174,8 +176,12 @@ function WordContainer({ wordData, index, onSelected, onDeselected }: WordContai
 }
 
 export default function ReviewPage() {
+  /** 선택된 단어 모아 줌 */
   const [selectedWords, setSelectedWords] = useState<WordDataType[]>([])
+  /** 복습하기 버튼 disabled 여부 */
   const [buttonDisabled, setButtonDisabled] = useState(true)
+  /** 단어 선택 페이지 shown 여부, 선택 완료 시 복습 화면으로 넘어감 */
+  const [selectWords, setSelectWords] = useState(true)
 
   const onWordSelected = useCallback((word: WordDataType) => {
     setSelectedWords((data) => data.concat(word))
@@ -186,129 +192,140 @@ export default function ReviewPage() {
   }, [])
 
   useEffect(() => {
-    setButtonDisabled(selectedWords.length < 10)
+    setButtonDisabled(selectedWords.length < THRESHOLD_NUMBER_OF_SELECTED_CARDS)
   }, [selectedWords.length])
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: color.background.white,
-      }}>
-      <ScrollView
-        style={{
-          paddingHorizontal: 20 * size.widthRate,
-          paddingVertical: 60 * size.widthRate,
-        }}>
-        <Text
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      {selectWords ? (
+        <>
+          <ScrollView
+            style={{
+              paddingHorizontal: 20 * size.widthRate,
+              paddingVertical: 60 * size.heightRate,
+            }}>
+            <Text
+              style={{
+                fontFamily: 'BMJUA',
+                fontSize: size.normalizeFontSize(24),
+                color: color.text.primary1,
+                marginLeft: 28 * size.widthRate,
+                marginBottom: 12 * size.widthRate,
+                textAlign: 'center',
+                // fontWeight: 'bold',
+              }}>
+              잘 모르겠어요
+            </Text>
+            {UNKNOWN_WORDS.map((item, index) => (
+              <WordContainer
+                key={item.id}
+                wordData={item}
+                index={index}
+                onSelected={onWordSelected}
+                onDeselected={onWordDeselected}
+              />
+            ))}
+            <Text
+              style={{
+                fontFamily: 'BMJUA',
+                fontSize: size.normalizeFontSize(24),
+                color: color.text.mainDark,
+                marginLeft: 28 * size.widthRate,
+                marginBottom: 12 * size.widthRate,
+                marginTop: 32 * size.widthRate,
+                textAlign: 'center',
+                // fontWeight: 'bold',
+              }}>
+              잘 알아요
+            </Text>
+            {KNOWN_WORDS.map((item, index) => (
+              <WordContainer
+                key={item.id}
+                wordData={item}
+                index={index}
+                onSelected={onWordSelected}
+                onDeselected={onWordDeselected}
+              />
+            ))}
+            <View style={{ marginBottom: 80 * size.widthRate }} />
+          </ScrollView>
+          <TouchableOpacity
+            style={{
+              width: 160 * size.widthRate,
+              height: 42 * size.widthRate,
+              position: 'absolute',
+              bottom: 16 * size.widthRate,
+              alignSelf: 'center',
+              borderRadius: 16 * size.widthRate,
+              marginBottom: 12 * size.heightRate,
+              backgroundColor: buttonDisabled ? color.button.mainDarkDisabled : color.button.mainDark,
+              justifyContent: 'center',
+              alignItems: 'center',
+              shadowOpacity: 0.7,
+              shadowColor: 'rgb(100, 100, 100)',
+              shadowRadius: 10,
+              shadowOffset: {
+                width: 3,
+                height: 5,
+              },
+            }}
+            onPress={() => setSelectWords(false)}
+            disabled={buttonDisabled}>
+            <Text
+              style={{
+                fontFamily: 'BMJUA',
+                fontSize: size.normalizeFontSize(17),
+                fontWeight: 'bold',
+                color: color.text.white,
+              }}>
+              복습 하기
+            </Text>
+          </TouchableOpacity>
+        </>
+      ) : (
+        <ImageBackground
+          source={require('images/learningCamera.png')}
           style={{
-            fontFamily: 'BMJUA',
-            fontSize: size.normalizeFontSize(24),
-            color: color.text.primary1,
-            marginLeft: 28 * size.widthRate,
-            marginBottom: 12 * size.widthRate,
-            textAlign: 'center',
-            // fontWeight: 'bold',
-          }}>
-          잘 모르겠어요
-        </Text>
-        {UNKNOWN_WORDS.map((item, index) => (
-          <WordContainer
-            key={item.id}
-            wordData={item}
-            index={index}
-            onSelected={onWordSelected}
-            onDeselected={onWordDeselected}
-          />
-        ))}
-        <Text
-          style={{
-            fontFamily: 'BMJUA',
-            fontSize: size.normalizeFontSize(24),
-            color: color.text.mainDark,
-            marginLeft: 28 * size.widthRate,
-            marginBottom: 12 * size.widthRate,
-            marginTop: 32 * size.widthRate,
-            textAlign: 'center',
-            // fontWeight: 'bold',
-          }}>
-          잘 알아요
-        </Text>
-        {KNOWN_WORDS.map((item, index) => (
-          <WordContainer
-            key={item.id}
-            wordData={item}
-            index={index}
-            onSelected={onWordSelected}
-            onDeselected={onWordDeselected}
-          />
-        ))}
-        <View style={{ marginBottom: 80 * size.widthRate }} />
-      </ScrollView>
-      {/* <ImageBackground
-        source={require('images/learningCamera.png')}
-        style={{ width: size.screenWidth, height: size.screenHeight, justifyContent: 'center', alignItems: 'center' }}>
-        <View
-          style={{
-            backgroundColor: color.background.mainLight,
-            width: 280,
-            height: 180,
-            borderRadius: 12,
-            borderWidth: 4,
-            shadowOpacity: 0.7,
-            shadowColor: 'rgb(100, 100, 100)',
-            shadowRadius: 10,
-            shadowOffset: {
-              width: 3,
-              height: 5,
-            },
+            position: 'absolute',
+            width: size.screenWidth,
+            height: size.screenHeight,
             justifyContent: 'center',
             alignItems: 'center',
-            bottom: 150 * size.heightRate,
           }}>
-          <Text
+          <View
             style={{
-              fontSize: size.normalizeFontSize(64),
-              color: color.text.primary1,
-              fontWeight: 'bold',
-              textAlign: 'center',
+              backgroundColor: color.background.mainLight,
+              width: 200 * size.widthRate,
+              height: 100 * size.widthRate,
+              borderRadius: 24 * size.widthRate,
+              // borderWidth: 4 * size.widthRate,
+              shadowOpacity: 0.7,
+              shadowColor: 'rgb(100, 100, 100)',
+              shadowRadius: 10 * size.widthRate,
+              shadowOffset: {
+                width: 3 * size.widthRate,
+                height: 5 * size.widthRate,
+              },
+              justifyContent: 'center',
+              alignItems: 'center',
+              bottom: 150 * size.heightRate,
             }}>
-            바나나
-          </Text>
-        </View>
-      </ImageBackground> */}
-      <TouchableOpacity
-        style={{
-          width: 160 * size.widthRate,
-          height: 42 * size.widthRate,
-          position: 'absolute',
-          bottom: 16 * size.widthRate,
-          alignSelf: 'center',
-          borderRadius: 16 * size.widthRate,
-          marginBottom: 12 * size.heightRate,
-          backgroundColor: buttonDisabled ? color.button.mainDarkDisabled : color.button.mainDark,
-          justifyContent: 'center',
-          alignItems: 'center',
-          shadowOpacity: 0.7,
-          shadowColor: 'rgb(100, 100, 100)',
-          shadowRadius: 10,
-          shadowOffset: {
-            width: 3,
-            height: 5,
-          },
-        }}
-        onPress={() => {}}
-        disabled={buttonDisabled}>
-        <Text
-          style={{
-            fontFamily: 'BMJUA',
-            fontSize: size.normalizeFontSize(17),
-            fontWeight: 'bold',
-            color: color.text.white,
-          }}>
-          복습 하기
-        </Text>
-      </TouchableOpacity>
+            <Text
+              style={{
+                fontFamily: 'BMJUA',
+                fontSize: size.normalizeFontSize(48),
+                color: color.text.primary1,
+                fontWeight: 'bold',
+                textAlign: 'center',
+                textShadowColor: '#333',
+                textShadowOffset: { width: 1, height: 1 },
+                textShadowRadius: -2 * size.widthRate,
+              }}>
+              바나나
+            </Text>
+          </View>
+        </ImageBackground>
+      )}
     </SafeAreaView>
   )
 }
