@@ -48,5 +48,7 @@ export default {
     mainDark: '#ffbf09',
     /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
     mainLight: '#fdf7da',
+    /** #ffffff whiteTwo: ![](https://www.colorhexa.com/ffffff.png) */
+    white: '#ffffff',
   },
 }
