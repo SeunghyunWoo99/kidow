@@ -50,5 +50,13 @@ export default {
     mainLight: '#fdf7da',
     /** #ffffff whiteTwo: ![](https://www.colorhexa.com/ffffff.png) */
     white: '#ffffff',
+    /** #000000 blackTwo: ![](https://www.colorhexa.com/000000.png) */
+    black1: '#000000',
+    /** #333333 black: ![](https://www.colorhexa.com/333333.png) */
+    black2: '#333333',
+    /** #666666 brownishGey: ![](https://www.colorhexa.com/666666.png) */
+    black3: '#666666',
+    /** #999999 brownGrey: ![](https://www.colorhexa.com/999999.png) */
+    black4: '#999999',
   },
 }

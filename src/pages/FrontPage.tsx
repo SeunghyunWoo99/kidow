@@ -12,7 +12,7 @@ export default function FrontPage() {
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: color.background.mainLight }}>
       <Image
         source={require('../../assets/logos/logo.png')}
-        style={{ width: 180 * size.widthRate, height: 180 * size.widthRate, bottom: 40 * size.heightRate }}
+        style={{ width: 120 * size.widthRate, height: 120 * size.widthRate, bottom: 40 * size.heightRate }}
       />
       <View style={{ position: 'absolute', bottom: 100, alignItems: 'center' }}>
         <TouchableOpacity
