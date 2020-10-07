@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styled from 'styled-components/native'
+import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import { size, color } from 'common'
 
 const TabBar = styled.View`
@@ -41,6 +42,7 @@ const QuizActive = (
 
 export default function MainTabBar({ state, descriptors, navigation }) {
   const focusedOptions = descriptors[state.routes[state.index].key].options
+  const [inTodayLearning, setInTodayLearning] = useState(true)
 
   if (focusedOptions.tabBarVisible === false) {
     return null
@@ -93,35 +95,66 @@ export default function MainTabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{ marginVertical: 16 * size.widthRate, marginHorizontal: 28 * size.widthRate }}>
+            style={{ marginVertical: 16 * size.widthRate, marginHorizontal: 30 * size.widthRate }}>
             {Icon()}
           </TouchableOpacity>
         )
       })}
-      <TouchableOpacity
+      <View
         style={{
-          width: 80 * size.widthRate,
-          height: 80 * size.widthRate,
-          borderRadius: 40 * size.widthRate,
-          backgroundColor: color.button.mainDark,
-          position: 'absolute',
-          right: 20 * size.widthRate,
-          bottom: 24 * size.widthRate,
-          alignItems: 'center',
           justifyContent: 'center',
-          shadowOpacity: 0.4,
-          shadowColor: 'rgb(100, 100, 100)',
-          shadowRadius: 10,
-          shadowOffset: {
-            width: 3,
-            height: 5,
-          },
+          alignItems: 'center',
+          right: -48 * size.widthRate,
+          bottom: 24 * size.widthRate,
         }}>
-        <Image
-          source={require('icons/todayLeaning.png')}
-          style={{ width: 48 * size.widthRate, height: 48 * size.widthRate, right: -6 * size.widthRate }}
-        />
-      </TouchableOpacity>
+        {inTodayLearning && (
+          <AnimatedCircularProgress
+            size={92 * size.widthRate}
+            width={8 * size.widthRate}
+            duration={1000}
+            fill={40}
+            tintColor="#ffbf09"
+            onAnimationComplete={() => console.log('onAnimationComplete')}
+            backgroundColor="#cccccc88"
+            style={{ position: 'absolute' }}
+          />
+        )}
+        <TouchableOpacity
+          style={{
+            width: 80 * size.widthRate,
+            height: 80 * size.widthRate,
+            borderRadius: 40 * size.widthRate,
+            backgroundColor: color.button.mainDark,
+            position: 'absolute',
+            alignItems: 'center',
+            justifyContent: 'center',
+            shadowOpacity: 0.4,
+            shadowColor: 'rgb(100, 100, 100)',
+            shadowRadius: 10,
+            shadowOffset: {
+              width: 3,
+              height: 5,
+            },
+          }}
+          onPress={() => setInTodayLearning((prev) => !prev)}>
+          {true ? (
+            <Image
+              source={require('icons/todayLeaning.png')}
+              style={{ width: 48 * size.widthRate, height: 48 * size.widthRate, right: -6 * size.widthRate }}
+            />
+          ) : (
+            <Text
+              style={{
+                fontFamily: 'BMJUA',
+                fontSize: size.normalizeFontSize(26),
+                color: color.text.white,
+                textAlign: 'center',
+              }}>
+              40%
+            </Text>
+          )}
+        </TouchableOpacity>
+      </View>
     </TabBar>
   )
 }
