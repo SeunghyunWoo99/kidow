@@ -47,13 +47,6 @@ export default function LearningPage() {
             바나나
           </Text>
         </View>
-        {/* <Tooltip
-          text={'카드로 학습하기'}
-          pressable={true}
-          pointerAlign="left"
-          pointerDirection="down"
-          style={{ position: 'absolute', bottom: -270 * size.widthRate, right: 30 * size.widthRate }}
-        /> */}
       </ImageBackground>
     </View>
   )
