@@ -2,7 +2,7 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { PhoneNumberInput, PhoneNumberAuth, NameInput, AgeInput } from 'pages'
+import { EmailInput, PasswordInput, NameInput, AgeInput } from 'pages'
 import { Back } from 'icons'
 
 const Stack = createStackNavigator()
@@ -11,10 +11,10 @@ export default function SignUpStackNavigator() {
   const navigation = useNavigation()
 
   return (
-    <Stack.Navigator initialRouteName="PhoneNumberInput">
+    <Stack.Navigator initialRouteName="EmailInput">
       <Stack.Screen
-        name="PhoneNumberInput"
-        component={PhoneNumberInput}
+        name="EmailInput"
+        component={EmailInput}
         options={{
           headerTitle: () => null,
           headerTransparent: true,
@@ -26,8 +26,8 @@ export default function SignUpStackNavigator() {
         }}
       />
       <Stack.Screen
-        name="PhoneNumberAuth"
-        component={PhoneNumberAuth}
+        name="PasswordInput"
+        component={PasswordInput}
         options={{
           headerTitle: () => null,
           headerTransparent: true,
