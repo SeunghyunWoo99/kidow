@@ -12,6 +12,7 @@ module.exports = {
           images: './assets/images',
           objects: './assets/objects',
           fonts: './assets/fonts',
+          svgs: './assets/svgs',
         },
       },
     ],
