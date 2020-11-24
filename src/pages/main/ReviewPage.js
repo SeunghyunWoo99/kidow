@@ -2,12 +2,13 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { View, ImageBackground, Text, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native'
 import { format } from 'date-fns'
 import { color, size } from 'common'
+import { ViroARSceneNavigator } from '@akadrimer/react-viro'
 
-const THRESHOLD_NUMBER_OF_SELECTED_CARDS = 5
+const THRESHOLD_NUMBER_OF_SELECTED_CARDS = 2
 
 const randomColors = ['#ffbf09', '#8A5E70', '#5BAD90']
 
-const UNKNOWN_WORDS: WordDataType[] = [
+const UNKNOWN_WORDS = [
   {
     id: '0',
     word: '바나나',
@@ -60,7 +61,7 @@ const UNKNOWN_WORDS: WordDataType[] = [
   },
 ]
 
-const KNOWN_WORDS: WordDataType[] = [
+const KNOWN_WORDS = [
   {
     id: '10',
     word: '대외비',
@@ -113,20 +114,7 @@ const KNOWN_WORDS: WordDataType[] = [
   },
 ]
 
-interface WordDataType {
-  id: string
-  word: string
-  date: Date
-}
-
-interface WordContainerProps {
-  wordData: WordDataType
-  index: number
-  onSelected: (word: WordDataType) => void
-  onDeselected: (id: string) => void
-}
-
-function WordContainer({ wordData, index, onSelected, onDeselected }: WordContainerProps) {
+function WordContainer({ wordData, index, onSelected, onDeselected }) {
   /** 랜덤한 색상 */
   const randomColor = randomColors[index % 3]
   const [isSelected, setIsSelected] = useState(false)
@@ -177,23 +165,31 @@ function WordContainer({ wordData, index, onSelected, onDeselected }: WordContai
 
 export default function ReviewPage() {
   /** 선택된 단어 모아 줌 */
-  const [selectedWords, setSelectedWords] = useState<WordDataType[]>([])
+  const [selectedWords, setSelectedWords] = useState([])
   /** 복습하기 버튼 disabled 여부 */
   const [buttonDisabled, setButtonDisabled] = useState(true)
   /** 단어 선택 페이지 shown 여부, 선택 완료 시 복습 화면으로 넘어감 */
   const [selectWords, setSelectWords] = useState(true)
 
-  const onWordSelected = useCallback((word: WordDataType) => {
+  const onWordSelected = useCallback((word) => {
     setSelectedWords((data) => data.concat(word))
   }, [])
-
-  const onWordDeselected = useCallback((id: string) => {
+  const onWordDeselected = useCallback((id) => {
     setSelectedWords((prevData) => prevData.filter((word) => word.id !== id))
   }, [])
 
   useEffect(() => {
     setButtonDisabled(selectedWords.length < THRESHOLD_NUMBER_OF_SELECTED_CARDS)
   }, [selectedWords.length])
+
+  var _sharedProps = {
+    apiKey: 'API_KEY_HERE',
+  }
+  var InitialARScene = require('./ReviewAR')
+
+  const [navigatorType, setNavigatorType] = useState('UNSET')
+  // console.log(navigatorType);
+  const [sharedProps, setSharedProps] = useState(_sharedProps)
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -283,48 +279,9 @@ export default function ReviewPage() {
           </TouchableOpacity>
         </>
       ) : (
-        <ImageBackground
-          source={require('images/learningCamera.png')}
-          style={{
-            position: 'absolute',
-            width: size.screenWidth,
-            height: size.screenHeight,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <View
-            style={{
-              backgroundColor: color.background.mainLight,
-              width: 200 * size.widthRate,
-              height: 100 * size.widthRate,
-              borderRadius: 24 * size.widthRate,
-              // borderWidth: 4 * size.widthRate,
-              shadowOpacity: 0.7,
-              shadowColor: 'rgb(100, 100, 100)',
-              shadowRadius: 10 * size.widthRate,
-              shadowOffset: {
-                width: 3 * size.widthRate,
-                height: 5 * size.widthRate,
-              },
-              justifyContent: 'center',
-              alignItems: 'center',
-              bottom: 150 * size.heightRate,
-            }}>
-            <Text
-              style={{
-                fontFamily: 'BMJUA',
-                fontSize: size.normalizeFontSize(48),
-                color: color.text.primary1,
-                fontWeight: 'bold',
-                textAlign: 'center',
-                textShadowColor: '#333',
-                textShadowOffset: { width: 1, height: 1 },
-                textShadowRadius: -2 * size.widthRate,
-              }}>
-              바나나
-            </Text>
-          </View>
-        </ImageBackground>
+        <>
+          <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
+        </>
       )}
     </SafeAreaView>
   )
