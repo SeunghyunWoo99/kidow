@@ -5,6 +5,8 @@
  * @format
  */
 
+'use strict'
+
 const { getDefaultConfig } = require('metro-config')
 
 module.exports = (async () => {
@@ -22,8 +24,9 @@ module.exports = (async () => {
       babelTransformerPath: require.resolve('react-native-svg-transformer'),
     },
     resolver: {
-      assetExts: assetExts.filter((ext) => ext !== 'svg'),
+      assetExts: [assetExts.filter((ext) => ext !== 'svg'), 'obj', 'mtl', 'JPG', 'vrx', 'hdr', 'gltf', 'glb', 'bin', 'arobject', 'gif'],
       sourceExts: [...sourceExts, 'svg'],
-    },
+    resolver: { assetExts },
+    } = await getDefaultConfig()
   }
 })()

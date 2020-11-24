@@ -1,6 +1,5 @@
-import React, { Children, ReactNode, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { Text, View, ScrollView, TouchableOpacity, Slider, Image } from 'react-native'
-import { Picker } from '@react-native-community/picker'
 import { color, size } from 'common'
 
 interface CellContainerProps {
