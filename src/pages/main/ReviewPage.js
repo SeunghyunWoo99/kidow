@@ -193,96 +193,102 @@ export default function ReviewPage() {
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {selectWords ? (
-        <>
-          <ScrollView
+      <View>
+        {selectWords ? (
+          <>
+            <ScrollView
+              style={{
+                paddingHorizontal: 20 * size.widthRate,
+                paddingVertical: 60 * size.heightRate,
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'BMJUA',
+                  fontSize: size.normalizeFontSize(24),
+                  color: color.text.primary1,
+                  marginLeft: 28 * size.widthRate,
+                  marginBottom: 12 * size.widthRate,
+                  textAlign: 'center',
+                  // fontWeight: 'bold',
+                }}>
+                잘 모르겠어요
+              </Text>
+              {UNKNOWN_WORDS.map((item, index) => (
+                <WordContainer
+                  key={item.id}
+                  wordData={item}
+                  index={index}
+                  onSelected={onWordSelected}
+                  onDeselected={onWordDeselected}
+                />
+              ))}
+              <Text
+                style={{
+                  fontFamily: 'BMJUA',
+                  fontSize: size.normalizeFontSize(24),
+                  color: color.text.mainDark,
+                  marginLeft: 28 * size.widthRate,
+                  marginBottom: 12 * size.widthRate,
+                  marginTop: 32 * size.widthRate,
+                  textAlign: 'center',
+                  // fontWeight: 'bold',
+                }}>
+                잘 알아요
+              </Text>
+              {KNOWN_WORDS.map((item, index) => (
+                <WordContainer
+                  key={item.id}
+                  wordData={item}
+                  index={index}
+                  onSelected={onWordSelected}
+                  onDeselected={onWordDeselected}
+                />
+              ))}
+              <View style={{ marginBottom: 80 * size.widthRate }} />
+            </ScrollView>
+            <TouchableOpacity
+              style={{
+                width: 160 * size.widthRate,
+                height: 42 * size.widthRate,
+                position: 'absolute',
+                bottom: 16 * size.widthRate,
+                alignSelf: 'center',
+                borderRadius: 16 * size.widthRate,
+                marginBottom: 12 * size.heightRate,
+                backgroundColor: buttonDisabled ? color.button.mainDarkDisabled : color.button.mainDark,
+                justifyContent: 'center',
+                alignItems: 'center',
+                shadowOpacity: 0.7,
+                shadowColor: 'rgb(100, 100, 100)',
+                shadowRadius: 10,
+                shadowOffset: {
+                  width: 3,
+                  height: 5,
+                },
+              }}
+              onPress={() => setSelectWords(false)}
+              disabled={buttonDisabled}>
+              <Text
+                style={{
+                  fontFamily: 'BMJUA',
+                  fontSize: size.normalizeFontSize(17),
+                  fontWeight: 'bold',
+                  color: color.text.white,
+                }}>
+                복습 하기
+              </Text>
+            </TouchableOpacity>
+          </>
+        ) : (
+          <View
             style={{
-              paddingHorizontal: 20 * size.widthRate,
-              paddingVertical: 60 * size.heightRate,
+              width: size.screenWidth,
+              height: size.screenHeight,
             }}>
-            <Text
-              style={{
-                fontFamily: 'BMJUA',
-                fontSize: size.normalizeFontSize(24),
-                color: color.text.primary1,
-                marginLeft: 28 * size.widthRate,
-                marginBottom: 12 * size.widthRate,
-                textAlign: 'center',
-                // fontWeight: 'bold',
-              }}>
-              잘 모르겠어요
-            </Text>
-            {UNKNOWN_WORDS.map((item, index) => (
-              <WordContainer
-                key={item.id}
-                wordData={item}
-                index={index}
-                onSelected={onWordSelected}
-                onDeselected={onWordDeselected}
-              />
-            ))}
-            <Text
-              style={{
-                fontFamily: 'BMJUA',
-                fontSize: size.normalizeFontSize(24),
-                color: color.text.mainDark,
-                marginLeft: 28 * size.widthRate,
-                marginBottom: 12 * size.widthRate,
-                marginTop: 32 * size.widthRate,
-                textAlign: 'center',
-                // fontWeight: 'bold',
-              }}>
-              잘 알아요
-            </Text>
-            {KNOWN_WORDS.map((item, index) => (
-              <WordContainer
-                key={item.id}
-                wordData={item}
-                index={index}
-                onSelected={onWordSelected}
-                onDeselected={onWordDeselected}
-              />
-            ))}
-            <View style={{ marginBottom: 80 * size.widthRate }} />
-          </ScrollView>
-          <TouchableOpacity
-            style={{
-              width: 160 * size.widthRate,
-              height: 42 * size.widthRate,
-              position: 'absolute',
-              bottom: 16 * size.widthRate,
-              alignSelf: 'center',
-              borderRadius: 16 * size.widthRate,
-              marginBottom: 12 * size.heightRate,
-              backgroundColor: buttonDisabled ? color.button.mainDarkDisabled : color.button.mainDark,
-              justifyContent: 'center',
-              alignItems: 'center',
-              shadowOpacity: 0.7,
-              shadowColor: 'rgb(100, 100, 100)',
-              shadowRadius: 10,
-              shadowOffset: {
-                width: 3,
-                height: 5,
-              },
-            }}
-            onPress={() => setSelectWords(false)}
-            disabled={buttonDisabled}>
-            <Text
-              style={{
-                fontFamily: 'BMJUA',
-                fontSize: size.normalizeFontSize(17),
-                fontWeight: 'bold',
-                color: color.text.white,
-              }}>
-              복습 하기
-            </Text>
-          </TouchableOpacity>
-        </>
-      ) : (
-        <>
-          <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
-        </>
-      )}
+            <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
+          </View>
+        )}
+      </View>
     </SafeAreaView>
   )
 }
