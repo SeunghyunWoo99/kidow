@@ -59,14 +59,6 @@ export default class QuizAR extends Component {
     return (
       <>
         <ViroARScene onTrackingUpdated={this._onInitialized}>
-          <ViroText
-            text={this.state.text}
-            extrusionDepth={2}
-            scale={[0.5, 0.5, 0.5]}
-            position={[0, 0.1, -0.8]}
-            style={styles.Quizstyle}
-          />
-
           <Viro3DObject
             name="dog"
             source={require('objects3D/Dog.obj')}
