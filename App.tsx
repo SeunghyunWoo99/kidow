@@ -36,6 +36,7 @@ export default function App() {
           component={RootStackNavigator}
           options={{
             headerShown: false,
+            gestureEnabled: false,
           }}
         />
       </Stack.Navigator>

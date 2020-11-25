@@ -17,6 +17,8 @@ export default {
     mainDark: '#ffbf09',
     /** 앱 메인 밝은 베이지 색상 ![](https://www.colorhexa.com/fdf7da.png) */
     mainLight: '#fdf7da',
+    /** 워닝 진한 주황색: ![](https://www.colorhexa.com/FF8303.png) */
+    warning: '#FF8303',
   },
 
   /** #eeeeee veryLightPinkTwo: ![](https://www.colorhexa.com/eeeeee.png) */
@@ -58,5 +60,7 @@ export default {
     black3: '#666666',
     /** #999999 brownGrey: ![](https://www.colorhexa.com/999999.png) */
     black4: '#999999',
+    /** 워닝 진한 주황색: ![](https://www.colorhexa.com/FF8303.png) */
+    warning: '#FF8303',
   },
 }
