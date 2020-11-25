@@ -2,17 +2,18 @@ import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 import { ViroARSceneNavigator } from '@akadrimer/react-viro'
 
-const LearningWithCards = () => {
+const TodayPage = () => {
   var _sharedProps = {
     apiKey: 'API_KEY_HERE',
   }
-  var InitialARScene = require('./LearningWithCardsAR')
+  var InitialARScene = require('./TodayAR')
 
   const [navigatorType, setNavigatorType] = useState('UNSET')
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
 
-  return null
+  //return null
+  return <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
 }
 
-export default LearningWithCards
+export default TodayPage
