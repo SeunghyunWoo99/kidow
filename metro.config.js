@@ -36,6 +36,7 @@ module.exports = (async () => {
         'bin',
         'arobject',
         'gif',
+        'png',
       ],
       sourceExts: [...sourceExts, 'svg'],
     },

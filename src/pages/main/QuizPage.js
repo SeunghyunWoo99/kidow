@@ -15,6 +15,7 @@ export default function QuizPage() {
   }
 
   let textProps = {
+    text: wordText,
     func: setWordText,
   }
 

@@ -13,10 +13,7 @@ const LearningWithCards = () => {
   const [sharedProps, setSharedProps] = useState(_sharedProps)
 
   return null
-<<<<<<< HEAD
-=======
   // return <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
->>>>>>> 8bc3de0... Object터치 시 Text 바뀌도록 설정(Quiz)
 }
 
 export default LearningWithCards
