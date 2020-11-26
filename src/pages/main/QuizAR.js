@@ -26,7 +26,6 @@ export default class QuizAR extends Component {
       object: <></>,
     }
 
-    console.log(props)
     // bind 'this' to functions
     this._onInitialized = this._onInitialized.bind(this)
 
@@ -34,17 +33,17 @@ export default class QuizAR extends Component {
       wolf: {
         diffuseTexture: require('objects3D/Wolves_BaseColor.png'),
       },
-    })
-
-    ViroMaterials.createMaterials({
-      rabbit: {
-        diffuseTexture: require('objects3D/Rabbit.png'),
-      },
-    })
-
-    ViroMaterials.createMaterials({
       bus: {
-        diffuseTexture: require('objects3D/bus.png'),
+        diffuseTexture: require('objects3D/Bus.png'),
+      },
+      airplane: {
+        diffuseTexture: require('objects3D/Airplane.png'),
+      },
+      bird: {
+        diffuseTexture: require('objects3D/Bird.png'),
+      },
+      dog: {
+        diffuseTexture: require('objects3D/Dog.png'),
       },
     })
 
@@ -73,12 +72,11 @@ export default class QuizAR extends Component {
       <>
         <ViroARScene onTrackingUpdated={this._onInitialized}>
           <Viro3DObject
-            name="bus"
-            source={require('objects3D/bus.obj')}
-            materials={['bus']}
+            name="dog"
+            source={require('objects3D/Dog.obj')}
+            materials={['dog']}
             position={[-0.4, -0.5, -1.5]}
-            rotation={[0, 180, 0]}
-            scale={[0.1, 0.1, 0.1]}
+            scale={[0.01, 0.01, 0.01]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
             // dragType="FixedToWorld"
@@ -134,11 +132,11 @@ export default class QuizAR extends Component {
             }}
           />
           <Viro3DObject
-            name="rabbit"
-            source={require('objects3D/Rabbit.obj')}
-            materials={['rabbit']}
+            name="Airplane"
+            source={require('objects3D/Airplane.obj')}
+            materials={['airplane']}
             position={[0.6, -0.5, -1.5]}
-            scale={[1.5, 1.5, 1.5]}
+            scale={[0.0005, 0.0005, 0.0005]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
             // dragType="FixedToWorld"
@@ -146,7 +144,13 @@ export default class QuizAR extends Component {
             onClick={() => {
               this.setState({
                 object: (
-                  <ViroImage height={0.8} width={0.8} position={[0, -0.0, -1.0]} source={require('images/wrong.png')} />
+                  <ViroImage
+                    height={0.8}
+                    width={0.8}
+                    position={[0, -0.0, -1.0]}
+                    rotation={[-6, 0, 0]}
+                    source={require('images/wrong.png')}
+                  />
                 ),
               })
               setTimeout(() => {
