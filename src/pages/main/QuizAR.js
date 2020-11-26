@@ -36,6 +36,18 @@ export default class QuizAR extends Component {
       },
     })
 
+    ViroMaterials.createMaterials({
+      rabbit: {
+        diffuseTexture: require('objects3D/Rabbit.png'),
+      },
+    })
+
+    ViroMaterials.createMaterials({
+      bus: {
+        diffuseTexture: require('objects3D/bus.png'),
+      },
+    })
+
     ViroAnimations.registerAnimations({
       bounceUp: {
         properties: {
@@ -61,10 +73,12 @@ export default class QuizAR extends Component {
       <>
         <ViroARScene onTrackingUpdated={this._onInitialized}>
           <Viro3DObject
-            name="dog"
-            source={require('objects3D/Dog.obj')}
+            name="bus"
+            source={require('objects3D/bus.obj')}
+            materials={['bus']}
             position={[-0.4, -0.5, -1.5]}
-            scale={[0.01, 0.01, 0.01]}
+            rotation={[0, 180, 0]}
+            scale={[0.1, 0.1, 0.1]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
             // dragType="FixedToWorld"
@@ -77,11 +91,10 @@ export default class QuizAR extends Component {
                     width={0.8}
                     position={[0, -0.0, -1.0]}
                     rotation={[-6, 0, 0]}
-                    source={require('images/correct.png')}
+                    source={require('images/wrong.png')}
                   />
                 ),
               })
-              this.props.sceneNavigator.viroAppProps.func('강아지')
               setTimeout(() => {
                 this.setState({
                   object: <></>,
@@ -104,9 +117,15 @@ export default class QuizAR extends Component {
             onClick={() => {
               this.setState({
                 object: (
-                  <ViroImage height={0.8} width={0.8} position={[0, -0.0, -1.0]} source={require('images/wrong.png')} />
+                  <ViroImage
+                    height={0.8}
+                    width={0.8}
+                    position={[0, -0.0, -1.0]}
+                    source={require('images/correct.png')}
+                  />
                 ),
               })
+              this.props.sceneNavigator.viroAppProps.func('버스')
               setTimeout(() => {
                 this.setState({
                   object: <></>,
@@ -115,10 +134,11 @@ export default class QuizAR extends Component {
             }}
           />
           <Viro3DObject
-            name="piano"
-            source={require('objects3D/Piano.obj')}
+            name="rabbit"
+            source={require('objects3D/Rabbit.obj')}
+            materials={['rabbit']}
             position={[0.6, -0.5, -1.5]}
-            scale={[0.0004, 0.0004, 0.0004]}
+            scale={[1.5, 1.5, 1.5]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
             // dragType="FixedToWorld"
