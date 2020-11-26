@@ -78,7 +78,6 @@ const HelloWorldSceneAR = (props) => {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
-          {console.log('Learning')}
           <Viro3DObject
             source={require('objects3D/Wolves.obj')}
             materials={['wolf']}
@@ -93,8 +92,10 @@ const HelloWorldSceneAR = (props) => {
             onClick={() => {
               setTimeout(() => {
                 setStage('Quiz')
+                {
+                  props.sceneNavigator.viroAppProps.func('비행기')
+                }
               }, 5000)
-              console.log('Learning')
             }}
           />
           {/* {object} */}
@@ -107,12 +108,12 @@ const HelloWorldSceneAR = (props) => {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
-          {props.sceneNavigator.viroAppProps.func('비행기')}
           <Viro3DObject
             name="dog"
             source={require('objects3D/Airplane.obj')}
+            materials={['airplane']}
             position={[-0.4, -0.5, -1.5]}
-            scale={[0.01, 0.01, 0.01]}
+            scale={[0.0005, 0.0005, 0.0005]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
             // dragType="FixedToWorld"
@@ -129,8 +130,11 @@ const HelloWorldSceneAR = (props) => {
               )
               setTimeout(() => {
                 setObject(<></>)
+                setStage('Review')
+                {
+                  props.sceneNavigator.viroAppProps.func('늑대')
+                }
               }, 5000)
-              setStage('Review')
             }}
           />
           <Viro3DObject
@@ -157,10 +161,11 @@ const HelloWorldSceneAR = (props) => {
             }}
           />
           <Viro3DObject
-            name="piano"
-            source={require('objects3D/Airplane.obj')}
+            name="dog"
+            source={require('objects3D/Dog.obj')}
             position={[0.6, -0.5, -1.5]}
-            scale={[0.0004, 0.0004, 0.0004]}
+            materials={['dog']}
+            scale={[0.01, 0.01, 0.01]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
             // dragType="FixedToWorld"
@@ -190,7 +195,6 @@ const HelloWorldSceneAR = (props) => {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
-          {props.sceneNavigator.viroAppProps.func('늑대')}
           <Viro3DObject
             source={require('objects3D/Wolves.obj')}
             materials={['wolf']}
