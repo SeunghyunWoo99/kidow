@@ -39,6 +39,18 @@ const HelloWorldSceneAR = (props) => {
     wolf: {
       diffuseTexture: require('objects3D/Wolves_BaseColor.png'),
     },
+    bus: {
+      diffuseTexture: require('objects3D/Bus.png'),
+    },
+    airplane: {
+      diffuseTexture: require('objects3D/Airplane.png'),
+    },
+    bird: {
+      diffuseTexture: require('objects3D/Bird.png'),
+    },
+    dog: {
+      diffuseTexture: require('objects3D/Dog.png'),
+    },
   })
 
   ViroAnimations.registerAnimations({
@@ -95,10 +107,10 @@ const HelloWorldSceneAR = (props) => {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
-          {props.sceneNavigator.viroAppProps.func('강아지')}
+          {props.sceneNavigator.viroAppProps.func('비행기')}
           <Viro3DObject
             name="dog"
-            source={require('objects3D/Dog.obj')}
+            source={require('objects3D/Airplane.obj')}
             position={[-0.4, -0.5, -1.5]}
             scale={[0.01, 0.01, 0.01]}
             type="OBJ"
@@ -146,7 +158,7 @@ const HelloWorldSceneAR = (props) => {
           />
           <Viro3DObject
             name="piano"
-            source={require('objects3D/Piano.obj')}
+            source={require('objects3D/Airplane.obj')}
             position={[0.6, -0.5, -1.5]}
             scale={[0.0004, 0.0004, 0.0004]}
             type="OBJ"

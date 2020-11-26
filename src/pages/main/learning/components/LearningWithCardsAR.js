@@ -34,6 +34,18 @@ export default class LearningWithCardsAR extends Component {
       wolf: {
         diffuseTexture: require('objects3D/Wolves_BaseColor.png'),
       },
+      bus: {
+        diffuseTexture: require('objects3D/Bus.png'),
+      },
+      airplane: {
+        diffuseTexture: require('objects3D/Airplane.png'),
+      },
+      bird: {
+        diffuseTexture: require('objects3D/Bird.png'),
+      },
+      dog: {
+        diffuseTexture: require('objects3D/Dog.png'),
+      },
     })
 
     ViroAnimations.registerAnimations({
