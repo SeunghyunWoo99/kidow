@@ -4,18 +4,23 @@ import { size, color } from 'common'
 import { ViroARSceneNavigator } from '@akadrimer/react-viro'
 
 export default function QuizPage() {
-  var _sharedProps = {
-    apiKey: 'API_KEY_HERE',
-  }
-  var InitialARScene = require('./QuizAR')
-
   const [navigatorType, setNavigatorType] = useState('UNSET')
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
+  const [wordText, setWordText] = useState('늑대')
+
+  var InitialARScene = require('./QuizAR')
+  var _sharedProps = {
+    apiKey: 'API_KEY_HERE',
+  }
+
+  let textProps = {
+    func: setWordText,
+  }
 
   return (
     <View style={{ flex: 1 }}>
-      <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
+      <ViroARSceneNavigator viroAppProps={textProps} {...sharedProps} initialScene={{ scene: InitialARScene }} />
       <View
         style={{
           width: 250 * size.widthRate,
@@ -28,7 +33,7 @@ export default function QuizPage() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{ fontSize: size.normalizeFontSize(72), fontWeight: 'bold' }}>강아지</Text>
+        <Text style={{ fontSize: size.normalizeFontSize(72), fontWeight: 'bold' }}>{wordText}</Text>
       </View>
     </View>
   )

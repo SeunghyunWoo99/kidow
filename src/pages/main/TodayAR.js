@@ -60,6 +60,8 @@ const HelloWorldSceneAR = (props) => {
     bounceRev: [['bounceDown', 'bounceUp']],
   })
 
+  //stage 1 -> 학습하기
+  // Text로 보여주고 싶은데 소통 어케하지,
   if (stage === 1) {
     return (
       <>
@@ -141,7 +143,9 @@ const HelloWorldSceneAR = (props) => {
         </ViroARScene>
       </>
     )
-  } else if (stage === 2) {
+  }
+  //stage 2 -> 퀴즈풀기
+  else if (stage === 2) {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
@@ -199,7 +203,9 @@ const HelloWorldSceneAR = (props) => {
         </ViroARScene>
       </>
     )
-  } else {
+  }
+  //stage 3 -> 복습하기
+  else {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
