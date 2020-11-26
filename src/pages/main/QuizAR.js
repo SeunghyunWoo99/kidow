@@ -17,7 +17,7 @@ import {
 import { BorderlessButton } from 'react-native-gesture-handler'
 
 export default class QuizAR extends Component {
-  constructor() {
+  constructor(props) {
     super()
 
     // Set initial state here
@@ -26,6 +26,7 @@ export default class QuizAR extends Component {
       object: <></>,
     }
 
+    console.log(props)
     // bind 'this' to functions
     this._onInitialized = this._onInitialized.bind(this)
 
@@ -80,6 +81,7 @@ export default class QuizAR extends Component {
                   />
                 ),
               })
+              this.props.sceneNavigator.viroAppProps.func('강아지')
               setTimeout(() => {
                 this.setState({
                   object: <></>,
@@ -87,6 +89,10 @@ export default class QuizAR extends Component {
               }, 5000)
             }}
           />
+
+          {/* {console.log('the text is:')}
+          {console.log(this.props.sceneNavigator.viroAppProps)} */}
+
           <Viro3DObject
             name="wolf"
             source={require('objects3D/Wolves.obj')}
