@@ -16,6 +16,7 @@ const HelloWorldSceneAR = (props) => {
   const [text, setText] = useState('Initializing AR...')
   const [object, setObject] = useState(<></>)
   const [stage, setStage] = useState('Learning')
+  const [learningObject, setLearningObject] = useState(1)
 
   // bind 'this' to functions
 
@@ -75,33 +76,99 @@ const HelloWorldSceneAR = (props) => {
   //stage 1 -> 학습하기
   // Text로 보여주고 싶은데 소통 어케하지,
   if (stage == 'Learning') {
-    return (
-      <>
-        <ViroARScene onTrackingUpdated={_onInitialized}>
-          <Viro3DObject
-            source={require('objects3D/Wolves.obj')}
-            materials={['wolf']}
-            position={[-0.0, -0.5, -1.5]}
-            scale={[0.08, 0.08, 0.08]}
-            type="OBJ"
-            animation={{ name: 'bounceRev', run: true, loop: true }}
-            // dragType="FixedToWorld"
-            // onDrag={() => {}}
-            //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
-            //onLoadEnd={()=>{  }}
-            onClick={() => {
-              setTimeout(() => {
-                setStage('Quiz')
-                {
-                  props.sceneNavigator.viroAppProps.func('비행기')
-                }
-              }, 5000)
-            }}
-          />
-          {/* {object} */}
-        </ViroARScene>
-      </>
-    )
+    if (learningObject == 1) {
+      return (
+        <>
+          <ViroARScene onTrackingUpdated={_onInitialized}>
+            <Viro3DObject
+              name="wolf"
+              source={require('objects3D/Wolves.obj')}
+              materials={['wolf']}
+              position={[-0.0, -0.5, -1.5]}
+              scale={[0.08, 0.08, 0.08]}
+              type="OBJ"
+              animation={{ name: 'bounceRev', run: true, loop: true }}
+              // dragType="FixedToWorld"
+              // onDrag={() => {}}
+              //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
+              //onLoadEnd={()=>{  }}
+              onClick={() => {
+                setTimeout(() => {
+                  setLearningObject(2)
+                  {
+                    props.sceneNavigator.viroAppProps.func('비행기')
+                  }
+                  // setStage('Quiz')
+                  // {
+                  //   props.sceneNavigator.viroAppProps.func('비행기')
+                  // }
+                }, 5000)
+              }}
+            />
+            {/* {object} */}
+          </ViroARScene>
+        </>
+      )
+    } else if (learningObject == 2) {
+      return (
+        <>
+          <ViroARScene onTrackingUpdated={_onInitialized}>
+            <Viro3DObject
+              name="Airplane"
+              source={require('objects3D/Airplane.obj')}
+              materials={['airplane']}
+              position={[-0.0, -0.5, -1.5]}
+              scale={[0.0005, 0.0005, 0.0005]}
+              type="OBJ"
+              animation={{ name: 'bounceRev', run: true, loop: true }}
+              // dragType="FixedToWorld"
+              // onDrag={() => {}}
+              //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
+              //onLoadEnd={()=>{  }}
+              onClick={() => {
+                setTimeout(() => {
+                  setLearningObject(3)
+                  {
+                    props.sceneNavigator.viroAppProps.func('강아지')
+                  }
+                }, 5000)
+              }}
+            />
+            {/* {object} */}
+          </ViroARScene>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <ViroARScene onTrackingUpdated={_onInitialized}>
+            <Viro3DObject
+              name="dog"
+              source={require('objects3D/Dog.obj')}
+              materials={['dog']}
+              position={[-0.0, -0.5, -1.5]}
+              scale={[0.0, 0.01, 0.01]}
+              type="OBJ"
+              animation={{ name: 'bounceRev', run: true, loop: true }}
+              // dragType="FixedToWorld"
+              // onDrag={() => {}}
+              //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
+              //onLoadEnd={()=>{  }}
+              onClick={() => {
+                setTimeout(() => {
+                  // setLearningObject(3)
+                  setStage('Quiz')
+                  {
+                    props.sceneNavigator.viroAppProps.func('비행기')
+                  }
+                }, 5000)
+              }}
+            />
+            {/* {object} */}
+          </ViroARScene>
+        </>
+      )
+    }
   }
   //stage 2 -> 퀴즈풀기
   else if (stage == 'Quiz') {
