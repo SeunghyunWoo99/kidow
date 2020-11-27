@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib Dog.mtl
+mtllib dog.mtl
 g default
 v 6.383518 31.275545 29.558794
 v 9.641719 17.277618 37.014206

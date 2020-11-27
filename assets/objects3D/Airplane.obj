@@ -1,6 +1,6 @@
 # This file uses meters as units for non-parametric coordinates.
 
-mtllib Airplane.mtl
+mtllib airplane.mtl
 g default
 v 496.167114 -50.627602 -279.655853
 v 599.744324 -49.852062 -323.371216

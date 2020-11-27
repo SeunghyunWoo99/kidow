@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib Wolves.mtl
+mtllib wolf.mtl
 g default
 v 0.000000 4.403793 -4.039699
 v 0.000000 3.488289 -3.763535

@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib Bird.mtl
+mtllib bird.mtl
 g default
 v 1.163234 0.151775 0.370793
 v 1.165823 0.068465 0.370793

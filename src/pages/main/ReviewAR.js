@@ -32,19 +32,19 @@ export default class ReviewAR extends Component {
 
     ViroMaterials.createMaterials({
       wolf: {
-        diffuseTexture: require('objects3D/Wolves_BaseColor.png'),
+        diffuseTexture: require('objects3D/wolf.png'),
       },
       bus: {
-        diffuseTexture: require('objects3D/Bus.png'),
+        diffuseTexture: require('objects3D/bus.png'),
       },
       airplane: {
-        diffuseTexture: require('objects3D/Airplane.png'),
+        diffuseTexture: require('objects3D/airplane.png'),
       },
       bird: {
-        diffuseTexture: require('objects3D/Bird.png'),
+        diffuseTexture: require('objects3D/bird.png'),
       },
       dog: {
-        diffuseTexture: require('objects3D/Dog.png'),
+        diffuseTexture: require('objects3D/dog.png'),
       },
     })
 
@@ -63,7 +63,7 @@ export default class ReviewAR extends Component {
       <>
         <ViroARScene onTrackingUpdated={this._onInitialized}>
           <Viro3DObject
-            source={require('objects3D/Wolves.obj')}
+            source={require('objects3D/wolf.obj')}
             materials={['wolf']}
             position={[-0.0, -1.5, -1.5]}
             animation={{ name: 'rotate', run: true, loop: true }}

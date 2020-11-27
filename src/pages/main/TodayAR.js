@@ -38,19 +38,19 @@ const HelloWorldSceneAR = (props) => {
 
   ViroMaterials.createMaterials({
     wolf: {
-      diffuseTexture: require('objects3D/Wolves_BaseColor.png'),
+      diffuseTexture: require('objects3D/wolf.png'),
     },
     bus: {
-      diffuseTexture: require('objects3D/Bus.png'),
+      diffuseTexture: require('objects3D/bus.png'),
     },
     airplane: {
-      diffuseTexture: require('objects3D/Airplane.png'),
+      diffuseTexture: require('objects3D/airplane.png'),
     },
     bird: {
-      diffuseTexture: require('objects3D/Bird.png'),
+      diffuseTexture: require('objects3D/bird.png'),
     },
     dog: {
-      diffuseTexture: require('objects3D/Dog.png'),
+      diffuseTexture: require('objects3D/dog.png'),
     },
   })
 
@@ -82,7 +82,7 @@ const HelloWorldSceneAR = (props) => {
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
               name="wolf"
-              source={require('objects3D/Wolves.obj')}
+              source={require('objects3D/wolf.obj')}
               materials={['wolf']}
               position={[-0.0, -0.5, -1.5]}
               scale={[0.08, 0.08, 0.08]}
@@ -115,7 +115,7 @@ const HelloWorldSceneAR = (props) => {
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
               name="Airplane"
-              source={require('objects3D/Airplane.obj')}
+              source={require('objects3D/airplane.obj')}
               materials={['airplane']}
               position={[-0.0, -0.5, -1.5]}
               scale={[0.0005, 0.0005, 0.0005]}
@@ -144,10 +144,10 @@ const HelloWorldSceneAR = (props) => {
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
               name="dog"
-              source={require('objects3D/Dog.obj')}
+              source={require('objects3D/dog.obj')}
               materials={['dog']}
               position={[-0.0, -0.5, -1.5]}
-              scale={[0.0, 0.01, 0.01]}
+              scale={[0.01, 0.01, 0.01]}
               type="OBJ"
               animation={{ name: 'bounceRev', run: true, loop: true }}
               // dragType="FixedToWorld"
@@ -176,8 +176,8 @@ const HelloWorldSceneAR = (props) => {
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
           <Viro3DObject
-            name="dog"
-            source={require('objects3D/Airplane.obj')}
+            name="airplane"
+            source={require('objects3D/airplane.obj')}
             materials={['airplane']}
             position={[-0.4, -0.5, -1.5]}
             scale={[0.0005, 0.0005, 0.0005]}
@@ -206,7 +206,7 @@ const HelloWorldSceneAR = (props) => {
           />
           <Viro3DObject
             name="wolf"
-            source={require('objects3D/Wolves.obj')}
+            source={require('objects3D/wolf.obj')}
             materials={['wolf']}
             animation={{ name: 'bounceIt', run: true, loop: true }}
             position={[-0.0, -0.5, -1.5]}
@@ -229,7 +229,7 @@ const HelloWorldSceneAR = (props) => {
           />
           <Viro3DObject
             name="dog"
-            source={require('objects3D/Dog.obj')}
+            source={require('objects3D/dog.obj')}
             position={[0.6, -0.5, -1.5]}
             materials={['dog']}
             scale={[0.01, 0.01, 0.01]}
@@ -263,7 +263,7 @@ const HelloWorldSceneAR = (props) => {
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
           <Viro3DObject
-            source={require('objects3D/Wolves.obj')}
+            source={require('objects3D/wolf.obj')}
             materials={['wolf']}
             position={[-0.0, -0.5, -1.5]}
             scale={[0.08, 0.08, 0.08]}
