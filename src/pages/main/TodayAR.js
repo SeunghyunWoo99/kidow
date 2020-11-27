@@ -60,23 +60,32 @@ const HelloWorldSceneAR = (props) => {
     },
   })
 
+  // ViroAnimations.registerAnimations({
+  //   bounceUp: {
+  //     properties: {
+  //       positionY: '+=0.02',
+  //     },
+  //     duration: 500, //.25 seconds..
+  //   },
+
+  //   bounceDown: {
+  //     properties: {
+  //       positionY: '-=0.02',
+  //     },
+  //     duration: 500, //.25 seconds..
+  //   },
+
+  //   bounceIt: [['bounceUp', 'bounceDown']],
+  //   bounceRev: [['bounceDown', 'bounceUp']],
+  // })
+
   ViroAnimations.registerAnimations({
-    bounceUp: {
+    rotate: {
       properties: {
-        positionY: '+=0.02',
+        rotateY: '+=30',
       },
-      duration: 500, //.25 seconds..
+      duration: 450, //.25 seconds
     },
-
-    bounceDown: {
-      properties: {
-        positionY: '-=0.02',
-      },
-      duration: 500, //.25 seconds..
-    },
-
-    bounceIt: [['bounceUp', 'bounceDown']],
-    bounceRev: [['bounceDown', 'bounceUp']],
   })
 
   //stage 1 -> 학습하기
@@ -90,24 +99,19 @@ const HelloWorldSceneAR = (props) => {
               name="fox"
               source={require('objects3D/fox.obj')}
               materials={['fox']}
+              animation={{ name: 'bounceIt', run: true, loop: true }}
               position={[-0.0, -0.5, -1.5]}
-              scale={[0.08, 0.08, 0.08]}
+              scale={[0.16, 0.16, 0.16]}
               type="OBJ"
-              animation={{ name: 'bounceRev', run: true, loop: true }}
+              animation={{ name: 'rotate', run: true, loop: true }}
               // dragType="FixedToWorld"
-              // onDrag={() => {}}
-              //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
-              //onLoadEnd={()=>{  }}
-              onClick={() => {
+              onDrag={() => {}}
+              onLoadEnd={() => {
                 setTimeout(() => {
                   setLearningObject(2)
                   {
-                    props.sceneNavigator.viroAppProps.func('비행기')
+                    props.sceneNavigator.viroAppProps.func('새')
                   }
-                  // setStage('Quiz')
-                  // {
-                  //   props.sceneNavigator.viroAppProps.func('비행기')
-                  // }
                 }, 5000)
               }}
             />
@@ -120,24 +124,22 @@ const HelloWorldSceneAR = (props) => {
         <>
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
-              name="Airplane"
-              source={require('objects3D/airplane.obj')}
-              materials={['airplane']}
-              position={[-0.0, -0.5, -1.5]}
-              scale={[0.0005, 0.0005, 0.0005]}
+              name="bird"
+              source={require('objects3D/bird.obj')}
+              materials={['bird']}
+              position={[0, -0.5, -1.5]}
+              scale={[0.21, 0.21, 0.21]}
               type="OBJ"
-              animation={{ name: 'bounceRev', run: true, loop: true }}
+              animation={{ name: 'rotate', run: true, loop: true }}
               // dragType="FixedToWorld"
-              // onDrag={() => {}}
-              //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
-              //onLoadEnd={()=>{  }}
-              onClick={() => {
+              onDrag={() => {}}
+              onLoadEnd={() => {
                 setTimeout(() => {
                   setLearningObject(3)
                   {
-                    props.sceneNavigator.viroAppProps.func('새')
+                    props.sceneNavigator.viroAppProps.func('자동차')
                   }
-                }, 5000)
+                }, 10000)
               }}
             />
             {/* {object} */}
@@ -149,25 +151,23 @@ const HelloWorldSceneAR = (props) => {
         <>
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
-              name="bird"
-              source={require('objects3D/bird.obj')}
-              materials={['bird']}
+              name="car"
+              source={require('objects3D/car.obj')}
+              materials={['car']}
               position={[-0.0, -0.5, -1.5]}
-              scale={[0.01, 0.01, 0.01]}
+              scale={[0.11, 0.11, 0.11]}
               type="OBJ"
-              animation={{ name: 'bounceRev', run: true, loop: true }}
+              // rotation={[-20, 0, 0]}
+              animation={{ name: 'rotate', run: true, loop: true }}
               // dragType="FixedToWorld"
-              // onDrag={() => {}}
-              //onLoadEnd 써도 될 듯 (일정 시간 이후 바뀌게 할 경우)
-              //onLoadEnd={()=>{  }}
-              onClick={() => {
+              onDrag={() => {}}
+              onLoadEnd={() => {
                 setTimeout(() => {
-                  // setLearningObject(3)
                   setStage('Quiz')
                   {
-                    props.sceneNavigator.viroAppProps.func('비행기')
+                    props.sceneNavigator.viroAppProps.func('여우')
                   }
-                }, 5000)
+                }, 10000)
               }}
             />
             {/* {object} */}
@@ -263,27 +263,27 @@ const HelloWorldSceneAR = (props) => {
       </>
     )
   }
-  //stage 3 -> 복습하기
+  //stage 3 -> 복습하기 (여우 틀림)
   else {
     return (
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
           <Viro3DObject
+            name="fox"
             source={require('objects3D/fox.obj')}
             materials={['fox']}
+            animation={{ name: 'bounceIt', run: true, loop: true }}
             position={[-0.0, -0.5, -1.5]}
-            scale={[0.08, 0.08, 0.08]}
+            scale={[0.16, 0.16, 0.16]}
             type="OBJ"
-            animation={{ name: 'bounceRev', run: true, loop: true }}
-            // dragType="FixedToWorld"
-            // onDrag={() => {}}
-            onClick={() => {
+            animation={{ name: 'rotate', run: true, loop: true }}
+            onDrag={() => {}}
+            onLoadEnd={() => {
               setTimeout(() => {
-                // setStage('Learning')
+                {
+                  props.sceneNavigator.viroAppProps.func('끝')
+                }
               }, 5000)
-              {
-                props.sceneNavigator.viroAppProps.func('끝')
-              }
             }}
           />
         </ViroARScene>

@@ -56,9 +56,10 @@ export default class QuizAR extends Component {
           name="zebra"
           source={require('objects3D/zebra.obj')}
           materials={['zebra']}
-          position={[-0.6, -0.5, -1.5]}
+          position={[-0.35, -0.5, -1.5]}
           scale={[0.05, 0.05, 0.05]}
           type="OBJ"
+          rotation={[0, 15, 0]}
           animation={{ name: 'bounceRev', run: true, loop: true }}
           // dragType="FixedToWorld"
           // onDrag={() => {}}
@@ -79,7 +80,7 @@ export default class QuizAR extends Component {
           materials={['fox']}
           animation={{ name: 'bounceIt', run: true, loop: true }}
           position={[-0.0, -0.5, -1.5]}
-          scale={[0.08, 0.08, 0.08]}
+          scale={[0.12, 0.12, 0.12]}
           type="OBJ"
           onClick={() => {
             this._isCorrect('여우', this.props.sceneNavigator.viroAppProps.text)
@@ -91,9 +92,10 @@ export default class QuizAR extends Component {
                     name="car"
                     source={require('objects3D/car.obj')}
                     materials={['car']}
-                    position={[-0.6, -0.5, -1.5]}
-                    scale={[0.05, 0.05, 0.05]}
+                    position={[-0.4, -0.31 - 1.5]}
+                    scale={[0.07, 0.07, 0.07]}
                     type="OBJ"
+                    rotation={[0, 15, 0]}
                     animation={{ name: 'bounceRev', run: true, loop: true }}
                     // dragType="FixedToWorld"
                     // onDrag={() => {}}
@@ -104,17 +106,18 @@ export default class QuizAR extends Component {
                           object: <></>,
                           object1: (
                             <Viro3DObject
-                              name="Airplane"
-                              source={require('objects3D/airplane.obj')}
-                              materials={['airplane']}
-                              position={[-0.6, -0.5, -1.5]}
-                              scale={[0.0005, 0.0005, 0.0005]}
+                              name="Elephant"
+                              source={require('objects3D/elephant.obj')}
+                              materials={['elephant']}
+                              position={[-0.4, -0.5, -1.5]}
+                              scale={[0.06, 0.06, 0.06]}
+                              rotation={[0, 13, 0]}
                               type="OBJ"
                               animation={{ name: 'bounceRev', run: true, loop: true }}
                               // dragType="FixedToWorld"
                               // onDrag={() => {}}
                               onClick={() => {
-                                this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
+                                this._isCorrect('코끼리', this.props.sceneNavigator.viroAppProps.text)
                                 setTimeout(() => {
                                   this.setState({
                                     object: <></>,
@@ -125,17 +128,17 @@ export default class QuizAR extends Component {
                           ),
                           object2: (
                             <Viro3DObject
-                              name="zebra"
-                              source={require('objects3D/zebra.obj')}
-                              materials={['zebra']}
+                              name="bird"
+                              source={require('objects3D/bird.obj')}
+                              materials={['bird']}
                               position={[0.0, -0.5, -1.5]}
-                              scale={[0.05, 0.05, 0.05]}
+                              scale={[0.11, 0.11, 0.11]}
                               type="OBJ"
                               animation={{ name: 'bounceRev', run: true, loop: true }}
                               // dragType="FixedToWorld"
                               // onDrag={() => {}}
                               onClick={() => {
-                                this._isCorrect('자동차', this.props.sceneNavigator.viroAppProps.text)
+                                this._isCorrect('새', this.props.sceneNavigator.viroAppProps.text)
                                 setTimeout(() => {
                                   this.setState({
                                     object: <></>,
@@ -146,12 +149,13 @@ export default class QuizAR extends Component {
                           ),
                           object3: (
                             <Viro3DObject
-                              name="우주선"
-                              source={require('objects3D/spaceShuttle.obj')}
-                              materials={['spaceShuttle']}
-                              position={[0.6, -0.5, -1.5]}
-                              scale={[0.01, 0.01, 0.01]}
+                              name="zebra"
+                              source={require('objects3D/zebra.obj')}
+                              materials={['zebra']}
+                              position={[0.35, -0.5, -1.5]}
+                              scale={[0.05, 0.05, 0.05]}
                               type="OBJ"
+                              rotation={[0, -15, 0]}
                               animation={{ name: 'bounceRev', run: true, loop: true }}
                               // dragType="FixedToWorld"
                               // onDrag={() => {}}
@@ -167,7 +171,7 @@ export default class QuizAR extends Component {
                           ),
                         })
                         if (this.state.isCorrect) {
-                          this.props.sceneNavigator.viroAppProps.func('비행기')
+                          this.props.sceneNavigator.viroAppProps.func('새')
                         }
                       }, 5000)
                     }}
@@ -175,17 +179,17 @@ export default class QuizAR extends Component {
                 ),
                 object2: (
                   <Viro3DObject
-                    name="bird"
-                    source={require('objects3D/bird.obj')}
-                    materials={['bird']}
-                    position={[0, -0.5, -1.5]}
-                    scale={[0.1, 0.1, 0.1]}
+                    name="Airplane"
+                    source={require('objects3D/airplane.obj')}
+                    materials={['airplane']}
+                    position={[0, -0.22, -1.5]}
+                    scale={[0.00035, 0.00035, 0.00035]}
                     type="OBJ"
                     animation={{ name: 'bounceRev', run: true, loop: true }}
                     // dragType="FixedToWorld"
                     // onDrag={() => {}}
                     onClick={() => {
-                      this._isCorrect('새', this.props.sceneNavigator.viroAppProps.text)
+                      this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
                       setTimeout(() => {
                         this.setState({
                           object: <></>,
@@ -196,12 +200,13 @@ export default class QuizAR extends Component {
                 ),
                 object3: (
                   <Viro3DObject
-                    name="fox"
-                    source={require('objects3D/fox.obj')}
-                    materials={['fox']}
-                    position={[0.6, -0.5, -1.5]}
-                    scale={[0.08, 0.08, 0.08]}
+                    name="우주선"
+                    source={require('objects3D/spaceShuttle.obj')}
+                    materials={['spaceShuttle']}
+                    position={[0.35, -0.2, -1.5]}
+                    scale={[0.013, 0.013, 0.013]}
                     type="OBJ"
+                    rotation={[0, -10, 0]}
                     animation={{ name: 'bounceRev', run: true, loop: true }}
                     // dragType="FixedToWorld"
                     // onDrag={() => {}}
@@ -225,11 +230,12 @@ export default class QuizAR extends Component {
       ),
       object3: (
         <Viro3DObject
-          name="Airplane"
-          source={require('objects3D/airplane.obj')}
-          materials={['airplane']}
-          position={[0.6, -0.5, -1.5]}
-          scale={[0.0005, 0.0005, 0.0005]}
+          name="bird"
+          source={require('objects3D/bird.obj')}
+          materials={['bird']}
+          position={[0.4, -0.5, -1.5]}
+          scale={[0.11, 0.11, 0.11]}
+          rotation={[0, -12, 0]}
           type="OBJ"
           animation={{ name: 'bounceRev', run: true, loop: true }}
           // dragType="FixedToWorld"

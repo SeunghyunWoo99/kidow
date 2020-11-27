@@ -7,7 +7,7 @@ export default function TodayPage() {
   const [navigatorType, setNavigatorType] = useState('UNSET')
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
-  const [todayWordText, setTodayWordText] = useState('늑대')
+  const [todayWordText, setTodayWordText] = useState('여우')
 
   var _sharedProps = {
     apiKey: 'API_KEY_HERE',
