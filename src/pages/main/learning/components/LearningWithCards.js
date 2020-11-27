@@ -12,8 +12,8 @@ const LearningWithCards = () => {
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
 
-  return null
-  // return <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
+  // return null
+  return <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: InitialARScene }} />
 }
 
 export default LearningWithCards

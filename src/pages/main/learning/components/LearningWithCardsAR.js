@@ -9,6 +9,7 @@ import {
   ViroARPlaneSelector,
   ViroMaterials,
   ViroAnimations,
+  ViroCamera,
   ViroConstants,
   ViroBox,
   ViroARObjectMarker,
@@ -29,50 +30,12 @@ export default class LearningWithCardsAR extends Component {
 
     // bind 'this' to functions
     this._onInitialized = this._onInitialized.bind(this)
-
-    ViroMaterials.createMaterials({
-      wolf: {
-        diffuseTexture: require('objects3D/wolf.png'),
-      },
-      bus: {
-        diffuseTexture: require('objects3D/bus.png'),
-      },
-      airplane: {
-        diffuseTexture: require('objects3D/airplane.png'),
-      },
-      bird: {
-        diffuseTexture: require('objects3D/bird.png'),
-      },
-      dog: {
-        diffuseTexture: require('objects3D/dog.png'),
-      },
-    })
-
-    ViroAnimations.registerAnimations({
-      rotate: {
-        properties: {
-          rotateY: '+=90',
-        },
-        duration: 1000, //.25 seconds..
-      },
-    })
   }
 
   render() {
     return (
       <>
-        <ViroARScene onTrackingUpdated={this._onInitialized}>
-          <Viro3DObject
-            source={require('objects3D/wolf.obj')}
-            materials={['wolf']}
-            position={[-0.0, -1.5, -1.5]}
-            animation={{ name: 'rotate', run: true, loop: true }}
-            scale={[0.1, 0.1, 0.1]}
-            type="OBJ"
-            dragType="FixedToWorld"
-            onDrag={() => {}}
-          />
-        </ViroARScene>
+        <ViroARScene onTrackingUpdated={this._onInitialized}></ViroARScene>
       </>
     )
   }
