@@ -21,7 +21,7 @@ const HelloWorldSceneAR = (props) => {
   // bind 'this' to functions
 
   // ViroMaterials.createMaterials({
-  //   wolf: {
+  //   fox: {
   //     diffuseTexture: require('./res/wolves/Wolves_BaseColor.png'),
   //   },
   // });
@@ -37,11 +37,8 @@ const HelloWorldSceneAR = (props) => {
   }
 
   ViroMaterials.createMaterials({
-    wolf: {
-      diffuseTexture: require('objects3D/wolf.png'),
-    },
-    bus: {
-      diffuseTexture: require('objects3D/bus.png'),
+    fox: {
+      diffuseTexture: require('objects3D/fox.png'),
     },
     airplane: {
       diffuseTexture: require('objects3D/airplane.png'),
@@ -49,8 +46,17 @@ const HelloWorldSceneAR = (props) => {
     bird: {
       diffuseTexture: require('objects3D/bird.png'),
     },
-    dog: {
-      diffuseTexture: require('objects3D/dog.png'),
+    zebra: {
+      diffuseTexture: require('objects3D/zebra.png'),
+    },
+    elephant: {
+      diffuseTexture: require('objects3D/elephant.png'),
+    },
+    car: {
+      diffuseTexture: require('objects3D/car.png'),
+    },
+    spaceShuttle: {
+      diffuseTexture: require('objects3D/spaceShuttle.png'),
     },
   })
 
@@ -81,9 +87,9 @@ const HelloWorldSceneAR = (props) => {
         <>
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
-              name="wolf"
-              source={require('objects3D/wolf.obj')}
-              materials={['wolf']}
+              name="fox"
+              source={require('objects3D/fox.obj')}
+              materials={['fox']}
               position={[-0.0, -0.5, -1.5]}
               scale={[0.08, 0.08, 0.08]}
               type="OBJ"
@@ -129,7 +135,7 @@ const HelloWorldSceneAR = (props) => {
                 setTimeout(() => {
                   setLearningObject(3)
                   {
-                    props.sceneNavigator.viroAppProps.func('강아지')
+                    props.sceneNavigator.viroAppProps.func('새')
                   }
                 }, 5000)
               }}
@@ -143,9 +149,9 @@ const HelloWorldSceneAR = (props) => {
         <>
           <ViroARScene onTrackingUpdated={_onInitialized}>
             <Viro3DObject
-              name="dog"
-              source={require('objects3D/dog.obj')}
-              materials={['dog']}
+              name="bird"
+              source={require('objects3D/bird.obj')}
+              materials={['bird']}
               position={[-0.0, -0.5, -1.5]}
               scale={[0.01, 0.01, 0.01]}
               type="OBJ"
@@ -199,15 +205,15 @@ const HelloWorldSceneAR = (props) => {
                 setObject(<></>)
                 setStage('Review')
                 {
-                  props.sceneNavigator.viroAppProps.func('늑대')
+                  props.sceneNavigator.viroAppProps.func('여우')
                 }
               }, 5000)
             }}
           />
           <Viro3DObject
-            name="wolf"
-            source={require('objects3D/wolf.obj')}
-            materials={['wolf']}
+            name="fox"
+            source={require('objects3D/fox.obj')}
+            materials={['fox']}
             animation={{ name: 'bounceIt', run: true, loop: true }}
             position={[-0.0, -0.5, -1.5]}
             scale={[0.08, 0.08, 0.08]}
@@ -228,10 +234,10 @@ const HelloWorldSceneAR = (props) => {
             }}
           />
           <Viro3DObject
-            name="dog"
-            source={require('objects3D/dog.obj')}
+            name="bird"
+            source={require('objects3D/bird.obj')}
             position={[0.6, -0.5, -1.5]}
-            materials={['dog']}
+            materials={['bird']}
             scale={[0.01, 0.01, 0.01]}
             type="OBJ"
             animation={{ name: 'bounceRev', run: true, loop: true }}
@@ -263,8 +269,8 @@ const HelloWorldSceneAR = (props) => {
       <>
         <ViroARScene onTrackingUpdated={_onInitialized}>
           <Viro3DObject
-            source={require('objects3D/wolf.obj')}
-            materials={['wolf']}
+            source={require('objects3D/fox.obj')}
+            materials={['fox']}
             position={[-0.0, -0.5, -1.5]}
             scale={[0.08, 0.08, 0.08]}
             type="OBJ"

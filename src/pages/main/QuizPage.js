@@ -7,7 +7,7 @@ export default function QuizPage() {
   const [navigatorType, setNavigatorType] = useState('UNSET')
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
-  const [wordText, setWordText] = useState('늑대')
+  const [wordText, setWordText] = useState('여우')
 
   var InitialARScene = require('./QuizAR')
   var _sharedProps = {
