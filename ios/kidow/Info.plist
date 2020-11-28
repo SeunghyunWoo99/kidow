@@ -57,5 +57,7 @@
 	<array>
 		<string>BMJUA.ttf</string>
 	</array>
+	<key>Privacy — Camera Usage Description</key>
+	<string>Haroo Voca requires access to your phone’s camera.</string>
 </dict>
 </plist>

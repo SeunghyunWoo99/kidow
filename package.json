@@ -10,6 +10,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "react": "16.13.1",
+    "react-native": "0.63.3",
+    "react-viro": "git+https://github.com/ViroCommunity/viro",
+    "react-native-permissions": "^3.0.0-beta.2",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-community/picker": "^1.8.0",
     "@react-navigation/bottom-tabs": "^5.9.0",
@@ -17,8 +21,6 @@
     "@react-navigation/stack": "^5.9.0",
     "date-fns": "^2.16.1",
     "email-validator": "^2.0.4",
-    "react": "16.13.1",
-    "react-native": "0.63.3",
     "react-native-circular-progress": "^1.3.6",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-linear-gradient": "^2.5.6",
