@@ -3,15 +3,43 @@ import { Text, View, ScrollView, TouchableOpacity, Image, ViewStyle } from 'reac
 import { Calendar } from 'react-native-calendars'
 import styled from 'styled-components/native'
 import { color, size } from 'common'
-import { Edit } from 'icons'
+import { Edit, RightArrow } from 'icons'
 
-const Container = styled.View`
-  width: ${325 * size.widthRate}px;
-  padding: ${24 * size.widthRate}px;
-  border-radius: ${20 * size.widthRate}px;
-  background-color: ${color.background.white};
-  align-self: center;
-`
+const DATA = [
+  '2020.11.30',
+  '2020.11.29',
+  '2020.11.27',
+  '2020.11.23',
+  '2020.11.22',
+  '2020.11.21',
+  '2020.11.20',
+  '2020.11.18',
+  '2020.11.17',
+  '2020.11.15',
+  '2020.11.12',
+  '2020.11.11',
+]
+
+function Container({ children, style }: { children: React.ReactNode; style?: ViewStyle }) {
+  return (
+    <View
+      style={[
+        {
+          width: 325 * size.widthRate,
+          paddingHorizontal: 24 * size.widthRate,
+          paddingVertical: 16 * size.widthRate,
+          margin: 12 * size.widthRate,
+          borderRadius: 20 * size.widthRate,
+          backgroundColor: color.background.white,
+          alignSelf: 'center',
+        },
+        { ...style },
+      ]}>
+      {children}
+    </View>
+  )
+}
+
 export default function ProfilePage() {
   return (
     <ScrollView
@@ -134,6 +162,41 @@ export default function ProfilePage() {
           // }}
         />
       </Container>
+      <Text
+        style={{
+          fontFamily: 'BMJUA',
+          fontSize: size.normalizeFontSize(14),
+          color: color.text.secondary1,
+          marginLeft: 54 * size.widthRate,
+          marginTop: 20 * size.widthRate,
+          marginBottom: 4 * size.widthRate,
+        }}>
+        {'학습 기록'}
+      </Text>
+      {DATA.map((label) => (
+        <Container
+          style={{
+            margin: 4 * size.widthRate,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <Text
+            style={{
+              fontFamily: 'BMJUA',
+              fontSize: size.normalizeFontSize(16),
+              color: color.text.primary1,
+            }}>
+            {label}
+          </Text>
+          <RightArrow
+            width={22 * size.widthRate}
+            height={22 * size.widthRate}
+            style={{ marginVertical: -4 * size.widthRate }}
+          />
+        </Container>
+      ))}
+      <View style={{ height: 80 * size.heightRate }} />
     </ScrollView>
   )
 }
