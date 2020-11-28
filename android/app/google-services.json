@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "268085922453",
+    "firebase_url": "https://running-test-3b652.firebaseio.com",
+    "project_id": "running-test-3b652",
+    "storage_bucket": "running-test-3b652.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268085922453:android:9f1f9c56abe0489213299c",
+        "android_client_info": {
+          "package_name": "com.kidow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268085922453-kktrbdn1irr4u0gn3qdt8e208ehv2g7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzljOrMeGsyEUMFNgPjg_DnJtaDSusVR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268085922453-kktrbdn1irr4u0gn3qdt8e208ehv2g7l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

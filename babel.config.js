@@ -13,6 +13,7 @@ module.exports = {
           objects: './assets/objects',
           fonts: './assets/fonts',
           svgs: './assets/svgs',
+          objects3D: './assets/objects3D',
         },
       },
     ],

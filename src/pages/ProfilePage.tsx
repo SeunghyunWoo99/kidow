@@ -50,7 +50,7 @@ export default function ProfilePage() {
         <View style={{ flexDirection: 'row', paddingVertical: 8 * size.heightRate }}>
           <View>
             <Image
-              source={require('images/hoon.jpg')}
+              source={require('images/hoon.JPG')}
               style={{
                 width: 120 * size.widthRate,
                 height: 120 * size.widthRate,
