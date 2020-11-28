@@ -37,6 +37,9 @@ export default class LearningWithCardsAR extends Component {
       car: {
         diffuseTexture: require('objects3D/car.png'),
       },
+      giraffe: {
+        diffuseTexture: require('objects3D/giraffe.png'),
+      },
       spaceShuttle: {
         diffuseTexture: require('objects3D/spaceShuttle.png'),
       },

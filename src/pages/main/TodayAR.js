@@ -57,371 +57,10 @@ export default class TodayAR extends Component {
     this.state = {
       text: '불러오는 중입니다',
       object: <></>,
-      object1: (
-        <Viro3DObject
-          name="zebra"
-          source={require('objects3D/zebra.obj')}
-          materials={['zebra']}
-          position={[-0.35, -0.5, -1.5]}
-          scale={[0.05, 0.05, 0.05]}
-          type="OBJ"
-          rotation={[0, 15, 0]}
-          animation={{ name: 'bounceRev', run: true, loop: true }}
-          // dragType="FixedToWorld"
-          // onDrag={() => {}}
-          onClick={() => {
-            this._isCorrect('얼룩말', this.props.sceneNavigator.viroAppProps.text)
-            setTimeout(() => {
-              if (this.state.count === 1) {
-                this.setState({
-                  object: <></>,
-                  object1: (
-                    <Viro3DObject
-                      name="car"
-                      source={require('objects3D/car.obj')}
-                      materials={['car']}
-                      position={[-0.4, -0.31, -1.5]}
-                      scale={[0.07, 0.07, 0.07]}
-                      type="OBJ"
-                      rotation={[0, 15, 0]}
-                      animation={{ name: 'bounceRev', run: true, loop: true }}
-                      // dragType="FixedToWorld"
-                      // onDrag={() => {}}
-                      onClick={() => {
-                        this._isCorrect('자동차', this.props.sceneNavigator.viroAppProps.text)
-                        setTimeout(() => {
-                          this.setState({
-                            object: <></>,
-                            object1: (
-                              <Viro3DObject
-                                name="Elephant"
-                                source={require('objects3D/elephant.obj')}
-                                materials={['elephant']}
-                                position={[-0.4, -0.5, -1.5]}
-                                scale={[0.06, 0.06, 0.06]}
-                                rotation={[0, 13, 0]}
-                                type="OBJ"
-                                animation={{ name: 'bounceRev', run: true, loop: true }}
-                                // dragType="FixedToWorld"
-                                // onDrag={() => {}}
-                                onClick={() => {
-                                  this._isCorrect('코끼리', this.props.sceneNavigator.viroAppProps.text)
-                                  setTimeout(() => {
-                                    this.setState({
-                                      object: <></>,
-                                    })
-                                  }, 3000)
-                                }}
-                              />
-                            ),
-                            object2: (
-                              <Viro3DObject
-                                name="bird"
-                                source={require('objects3D/bird.obj')}
-                                materials={['bird']}
-                                position={[0.0, -0.5, -1.5]}
-                                scale={[0.11, 0.11, 0.11]}
-                                type="OBJ"
-                                animation={{ name: 'bounceRev', run: true, loop: true }}
-                                // dragType="FixedToWorld"
-                                // onDrag={() => {}}
-                                onClick={() => {
-                                  this._isCorrect('새', this.props.sceneNavigator.viroAppProps.text)
-                                  setTimeout(() => {
-                                    this.setState({
-                                      object: <></>,
-                                      object1: (
-                                        <Viro3DObject
-                                          name="motorcycle"
-                                          source={require('objects3D/motorcycle.obj')}
-                                          materials={['motorcycle']}
-                                          position={[-0.4, -0.5, -1.5]}
-                                          scale={[0.06, 0.06, 0.06]}
-                                          rotation={[0, 13, 0]}
-                                          type="OBJ"
-                                          animation={{ name: 'bounceRev', run: true, loop: true }}
-                                          // dragType="FixedToWorld"
-                                          // onDrag={() => {}}
-                                          onClick={() => {
-                                            this._isCorrect('오토바이', this.props.sceneNavigator.viroAppProps.text)
-                                            setTimeout(() => {
-                                              if (this.state.count == 1) {
-                                                this.setState({
-                                                  object: <></>,
-                                                  //여기에 추가
-                                                  object1: (
-                                                    <Viro3DObject
-                                                      name="giraffe"
-                                                      source={require('objects3D/giraffe.obj')}
-                                                      materials={['giraffe']}
-                                                      position={[-0.4, -0.5, -1.5]}
-                                                      scale={[0.002, 0.002, 0.002]}
-                                                      rotation={[0, 13, 0]}
-                                                      type="OBJ"
-                                                      animation={{ name: 'bounceRev', run: true, loop: true }}
-                                                      // dragType="FixedToWorld"
-                                                      // onDrag={() => {}}
-                                                      onClick={() => {
-                                                        this._isCorrect(
-                                                          '기린',
-                                                          this.props.sceneNavigator.viroAppProps.text,
-                                                        )
-                                                        setTimeout(() => {
-                                                          this.setState({
-                                                            object: <></>,
-                                                            stage: 'Review',
-                                                            //여기에 추가
-                                                          })
-                                                          this.props.sceneNavigator.viroAppProps.func('여우')
-                                                        }, 3000)
-                                                      }}
-                                                    />
-                                                  ),
-                                                  object2: (
-                                                    <Viro3DObject
-                                                      name="monkey"
-                                                      source={require('objects3D/monkey.obj')}
-                                                      materials={['monkey']}
-                                                      position={[0.0, -0.5, -1.5]}
-                                                      scale={[0.1, 0.1, 0.1]}
-                                                      type="OBJ"
-                                                      animation={{ name: 'bounceRev', run: true, loop: true }}
-                                                      // dragType="FixedToWorld"
-                                                      // onDrag={() => {}}
-                                                      onClick={() => {
-                                                        this._isCorrect(
-                                                          '원숭이',
-                                                          this.props.sceneNavigator.viroAppProps.text,
-                                                        )
-                                                        setTimeout(() => {
-                                                          this.setState({
-                                                            object: <></>,
-                                                          })
-                                                        }, 3000)
-                                                      }}
-                                                    />
-                                                  ),
-                                                  object3: (
-                                                    <Viro3DObject
-                                                      name="zebra"
-                                                      source={require('objects3D/zebra.obj')}
-                                                      materials={['zebra']}
-                                                      position={[0.35, -0.5, -1.5]}
-                                                      scale={[0.05, 0.05, 0.05]}
-                                                      type="OBJ"
-                                                      rotation={[0, -15, 0]}
-                                                      animation={{ name: 'bounceRev', run: true, loop: true }}
-                                                      // dragType="FixedToWorld"
-                                                      // onDrag={() => {}}
-                                                      onClick={() => {
-                                                        this._isCorrect(
-                                                          '얼룩말',
-                                                          this.props.sceneNavigator.viroAppProps.text,
-                                                        )
-                                                        setTimeout(() => {
-                                                          this.setState({
-                                                            object: <></>,
-                                                          })
-                                                        }, 3000)
-                                                      }}
-                                                    />
-                                                  ),
-                                                  count: 0,
-                                                })
-                                                this.props.sceneNavigator.viroAppProps.func('기린')
-                                              } else {
-                                                this.setState({
-                                                  object: <></>,
-                                                  count: this.state.count + 1,
-                                                })
-                                              }
-                                            }, 3000)
-                                          }}
-                                        />
-                                      ),
-                                      object2: (
-                                        <Viro3DObject
-                                          name="bike"
-                                          source={require('objects3D/bike.obj')}
-                                          materials={['bike']}
-                                          position={[0.0, -0.5, -1.5]}
-                                          scale={[0.2, 0.2, 0.2]}
-                                          type="OBJ"
-                                          animation={{ name: 'bounceRev', run: true, loop: true }}
-                                          // dragType="FixedToWorld"
-                                          // onDrag={() => {}}
-                                          onClick={() => {
-                                            this._isCorrect('자전거', this.props.sceneNavigator.viroAppProps.text)
-                                            setTimeout(() => {
-                                              this.setState({
-                                                object: <></>,
-                                              })
-                                            }, 3000)
-                                          }}
-                                        />
-                                      ),
-                                      object3: (
-                                        <Viro3DObject
-                                          name="car"
-                                          source={require('objects3D/car.obj')}
-                                          materials={['car']}
-                                          position={[0.35, -0.5, -1.5]}
-                                          scale={[0.07, 0.07, 0.07]}
-                                          type="OBJ"
-                                          rotation={[0, -15, 0]}
-                                          animation={{ name: 'bounceRev', run: true, loop: true }}
-                                          // dragType="FixedToWorld"
-                                          // onDrag={() => {}}
-                                          onClick={() => {
-                                            this._isCorrect('자동차', this.props.sceneNavigator.viroAppProps.text)
-                                            setTimeout(() => {
-                                              this.setState({
-                                                object: <></>,
-                                                count: this.state.count + 1,
-                                              })
-                                            }, 3000)
-                                          }}
-                                        />
-                                      ),
-                                    })
-                                    if (this.state.isCorrect) {
-                                      this.props.sceneNavigator.viroAppProps.func('자전거')
-                                    }
-                                  }, 3000)
-                                }}
-                              />
-                            ),
-                            object3: (
-                              <Viro3DObject
-                                name="giraffe"
-                                source={require('objects3D/giraffe.obj')}
-                                materials={['giraffe']}
-                                position={[0.35, -0.5, -1.5]}
-                                scale={[0.002, 0.002, 0.002]}
-                                type="OBJ"
-                                rotation={[0, -15, 0]}
-                                animation={{ name: 'bounceRev', run: true, loop: true }}
-                                // dragType="FixedToWorld"
-                                // onDrag={() => {}}
-                                onClick={() => {
-                                  this._isCorrect('기린', this.props.sceneNavigator.viroAppProps.text)
-                                  setTimeout(() => {
-                                    this.setState({
-                                      object: <></>,
-                                    })
-                                  }, 3000)
-                                }}
-                              />
-                            ),
-                          })
-                          if (this.state.isCorrect) {
-                            this.props.sceneNavigator.viroAppProps.func('새')
-                          }
-                        }, 3000)
-                      }}
-                    />
-                  ),
-                  object2: (
-                    <Viro3DObject
-                      name="Airplane"
-                      source={require('objects3D/airplane.obj')}
-                      materials={['airplane']}
-                      position={[0, -0.22, -1.5]}
-                      scale={[0.00035, 0.00035, 0.00035]}
-                      type="OBJ"
-                      animation={{ name: 'bounceRev', run: true, loop: true }}
-                      // dragType="FixedToWorld"
-                      // onDrag={() => {}}
-                      onClick={() => {
-                        this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
-                        setTimeout(() => {
-                          this.setState({
-                            object: <></>,
-                          })
-                        }, 3000)
-                      }}
-                    />
-                  ),
-                  object3: (
-                    <Viro3DObject
-                      name="우주선"
-                      source={require('objects3D/spaceShuttle.obj')}
-                      materials={['spaceShuttle']}
-                      position={[0.35, -0.2, -1.5]}
-                      scale={[0.013, 0.013, 0.013]}
-                      type="OBJ"
-                      rotation={[0, -10, 0]}
-                      animation={{ name: 'bounceRev', run: true, loop: true }}
-                      // dragType="FixedToWorld"
-                      // onDrag={() => {}}
-                      onClick={() => {
-                        this._isCorrect('우주선', this.props.sceneNavigator.viroAppProps.text)
-                        setTimeout(() => {
-                          this.setState({
-                            object: <></>,
-                          })
-                        }, 3000)
-                      }}
-                    />
-                  ),
-                  count: 0,
-                })
-                this.props.sceneNavigator.viroAppProps.func('자동차')
-              } else {
-                this.setState({
-                  object: <></>,
-                  count: this.state.count + 1,
-                })
-              }
-            }, 3000)
-          }}
-        />
-      ),
-      object2: (
-        <Viro3DObject
-          name="fox"
-          source={require('objects3D/fox.obj')}
-          materials={['fox']}
-          animation={{ name: 'bounceIt', run: true, loop: true }}
-          position={[-0.0, -0.5, -1.5]}
-          scale={[0.12, 0.12, 0.12]}
-          type="OBJ"
-          onClick={() => {
-            this._isCorrect('여우', this.props.sceneNavigator.viroAppProps.text)
-            setTimeout(() => {
-              this.setState({
-                object: <></>,
-              })
-            }, 3000)
-          }}
-        />
-      ),
-      object3: (
-        <Viro3DObject
-          name="bird"
-          source={require('objects3D/bird.obj')}
-          materials={['bird']}
-          position={[0.4, -0.5, -1.5]}
-          scale={[0.11, 0.11, 0.11]}
-          rotation={[0, -12, 0]}
-          type="OBJ"
-          animation={{ name: 'bounceRev', run: true, loop: true }}
-          // dragType="FixedToWorld"
-          // onDrag={() => {}}
-          onClick={() => {
-            this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
-            setTimeout(() => {
-              this.setState({
-                object: <></>,
-                count: this.state.count + 1,
-              })
-            }, 3000)
-          }}
-        />
-      ),
       isCorrect: false,
       stage: 'Learning',
       learningObject: 1,
+      quizObject: 1,
       reviewObject: 1,
       count: 0,
     }
@@ -596,16 +235,390 @@ export default class TodayAR extends Component {
     }
     //stage 2 -> 퀴즈풀기
     else if (this.state.stage == 'Quiz') {
-      return (
-        <>
-          <ViroARScene onTrackingUpdated={this._onInitialized}>
-            {this.state.object1}
-            {this.state.object2}
-            {this.state.object3}
-            {this.state.object}
-          </ViroARScene>
-        </>
-      )
+      if (this.state.quizObject == 1) {
+        return (
+          <>
+            <ViroARScene onTrackingUpdated={this._onInitialized}>
+              <Viro3DObject
+                name="zebra"
+                source={require('objects3D/zebra.obj')}
+                materials={['zebra']}
+                position={[-0.35, -0.5, -1.5]}
+                scale={[0.05, 0.05, 0.05]}
+                type="OBJ"
+                rotation={[0, 15, 0]}
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('얼룩말', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    if (this.state.count === 1) {
+                      this.setState({
+                        object: <></>,
+                        quizObject: 2,
+                        count: 0,
+                      })
+                      this.props.sceneNavigator.viroAppProps.func('자동차')
+                    } else {
+                      this.setState({
+                        object: <></>,
+                        count: this.state.count + 1,
+                      })
+                    }
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="fox"
+                source={require('objects3D/fox.obj')}
+                materials={['fox']}
+                animation={{ name: 'bounceIt', run: true, loop: true }}
+                position={[-0.0, -0.5, -1.5]}
+                scale={[0.12, 0.12, 0.12]}
+                type="OBJ"
+                onClick={() => {
+                  this._isCorrect('여우', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="bird"
+                source={require('objects3D/bird.obj')}
+                materials={['bird']}
+                position={[0.4, -0.5, -1.5]}
+                scale={[0.11, 0.11, 0.11]}
+                rotation={[0, -12, 0]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    if (this.state.count === 1) {
+                      this.setState({
+                        object: <></>,
+                        quizObject: 2,
+                        count: 0,
+                      })
+                      this.props.sceneNavigator.viroAppProps.func('자동차')
+                    } else {
+                      this.setState({
+                        object: <></>,
+                        count: this.state.count + 1,
+                      })
+                    }
+                  }, 5000)
+                }}
+              />
+              {this.state.object}
+            </ViroARScene>
+          </>
+        )
+      } else if (this.state.quizObject == 2) {
+        return (
+          <>
+            <ViroARScene onTrackingUpdated={this._onInitialized}>
+              <Viro3DObject
+                name="car"
+                source={require('objects3D/car.obj')}
+                materials={['car']}
+                position={[-0.4, -0.31, -1.5]}
+                scale={[0.07, 0.07, 0.07]}
+                type="OBJ"
+                rotation={[0, 15, 0]}
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('자동차', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                      quizObject: 3,
+                    })
+                    if (this.state.isCorrect) {
+                      this.props.sceneNavigator.viroAppProps.func('새')
+                    }
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="Airplane"
+                source={require('objects3D/airplane.obj')}
+                materials={['airplane']}
+                position={[0, -0.22, -1.5]}
+                scale={[0.00035, 0.00035, 0.00035]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="우주선"
+                source={require('objects3D/spaceShuttle.obj')}
+                materials={['spaceShuttle']}
+                position={[0.35, -0.2, -1.5]}
+                scale={[0.013, 0.013, 0.013]}
+                type="OBJ"
+                rotation={[0, -10, 0]}
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('우주선', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              {this.state.object}
+            </ViroARScene>
+          </>
+        )
+      } else if (this.state.quizObject == 3) {
+        return (
+          <>
+            <ViroARScene onTrackingUpdated={this._onInitialized}>
+              <Viro3DObject
+                name="Elephant"
+                source={require('objects3D/elephant.obj')}
+                materials={['elephant']}
+                position={[-0.4, -0.5, -1.5]}
+                scale={[0.06, 0.06, 0.06]}
+                rotation={[0, 13, 0]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('코끼리', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="bird"
+                source={require('objects3D/bird.obj')}
+                materials={['bird']}
+                position={[0.0, -0.5, -1.5]}
+                scale={[0.11, 0.11, 0.11]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('새', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                      quizObject: 4,
+                    })
+                    if (this.state.isCorrect) {
+                      this.props.sceneNavigator.viroAppProps.func('자전거')
+                    }
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="giraffe"
+                source={require('objects3D/giraffe.obj')}
+                materials={['giraffe']}
+                position={[0.35, -0.5, -1.5]}
+                scale={[0.002, 0.002, 0.002]}
+                type="OBJ"
+                rotation={[0, -15, 0]}
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('기린', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              {this.state.object}
+            </ViroARScene>
+          </>
+        )
+      } else if (this.state.quizObject == 4) {
+        return (
+          <>
+            <ViroARScene onTrackingUpdated={this._onInitialized}>
+              <Viro3DObject
+                name="motorcycle"
+                source={require('objects3D/motorcycle.obj')}
+                materials={['motorcycle']}
+                position={[-0.4, -0.5, -1.5]}
+                rotation={[0, -70, 0]}
+                scale={[0.06, 0.06, 0.06]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                onClick={() => {
+                  this._isCorrect('오토바이', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    if (this.state.count == 1) {
+                      this.setState({
+                        object: <></>,
+                        quizObject: 5,
+                        count: 0,
+                      })
+                      this.props.sceneNavigator.viroAppProps.func('기린')
+                    } else {
+                      this.setState({
+                        object: <></>,
+                        count: this.state.count + 1,
+                      })
+                    }
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="bike"
+                source={require('objects3D/bike.obj')}
+                materials={['bike']}
+                position={[0.0, -0.5, -1.5]}
+                rotation={[0, -70, 0]}
+                scale={[0.2, 0.2, 0.2]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                onClick={() => {
+                  this._isCorrect('자전거', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              <Viro3DObject
+                name="car"
+                source={require('objects3D/car.obj')}
+                materials={['car']}
+                position={[0.35, -0.5, -1.5]}
+                scale={[0.07, 0.07, 0.07]}
+                type="OBJ"
+                rotation={[0, 10, 0]}
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                onClick={() => {
+                  this._isCorrect('자동차', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    if (this.state.count === 1) {
+                      this.setState({
+                        object: <></>,
+                        quizObject: 2,
+                        count: 0,
+                      })
+                      this.props.sceneNavigator.viroAppProps.func('자동차')
+                    } else {
+                      this.setState({
+                        object: <></>,
+                        count: this.state.count + 1,
+                      })
+                    }
+                  }, 5000)
+                }}
+              />
+              {this.state.object}
+            </ViroARScene>
+          </>
+        )
+      } else {
+        return (
+          <>
+            <ViroARScene onTrackingUpdated={this._onInitialized}>
+              <Viro3DObject
+                name="giraffe"
+                source={require('objects3D/giraffe.obj')}
+                materials={['giraffe']}
+                position={[-0.4, -0.5, -1.5]}
+                scale={[0.002, 0.002, 0.002]}
+                rotation={[0, 13, 0]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('기린', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                      stage: 'Review',
+                      //여기에 추가
+                    })
+                    if (this.state.isCorrect) {
+                      this.props.sceneNavigator.viroAppProps.func('여우')
+                    }
+                  }, 5000)
+                }}
+              />
+
+              <Viro3DObject
+                name="monkey"
+                source={require('objects3D/monkey.obj')}
+                materials={['monkey']}
+                position={[0.0, -0.5, -1.5]}
+                scale={[0.1, 0.1, 0.1]}
+                type="OBJ"
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('원숭이', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+
+              <Viro3DObject
+                name="zebra"
+                source={require('objects3D/zebra.obj')}
+                materials={['zebra']}
+                position={[0.35, -0.5, -1.5]}
+                scale={[0.05, 0.05, 0.05]}
+                type="OBJ"
+                rotation={[0, -15, 0]}
+                animation={{ name: 'bounceRev', run: true, loop: true }}
+                // dragType="FixedToWorld"
+                // onDrag={() => {}}
+                onClick={() => {
+                  this._isCorrect('얼룩말', this.props.sceneNavigator.viroAppProps.text)
+                  setTimeout(() => {
+                    this.setState({
+                      object: <></>,
+                    })
+                  }, 5000)
+                }}
+              />
+              {this.state.object}
+            </ViroARScene>
+          </>
+        )
+      }
     }
     //stage 3 -> 복습하기 (여우 틀림)
     else {
@@ -653,7 +666,7 @@ export default class TodayAR extends Component {
                 onClick={() => {
                   setTimeout(() => {
                     this.props.sceneNavigator.viroAppProps.func('끝')
-                  }, 3000)
+                  }, 5000)
                 }}
               />
             </ViroARScene>
