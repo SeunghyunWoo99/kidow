@@ -45,6 +45,15 @@ export default class QuizAR extends Component {
       spaceShuttle: {
         diffuseTexture: require('objects3D/spaceShuttle.png'),
       },
+      bike: {
+        diffuseTexture: require('objects3D/bike.png'),
+      },
+      monkey: {
+        diffuseTexture: require('objects3D/monkey.png'),
+      },
+      motorcycle: {
+        diffuseTexture: require('objects3D/motorcycle.png'),
+      },
     })
 
     // Set initial state here

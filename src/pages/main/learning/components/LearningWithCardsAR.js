@@ -4,19 +4,7 @@ import React, { Component } from 'react'
 
 import { StyleSheet } from 'react-native'
 
-import {
-  ViroARScene,
-  ViroARPlaneSelector,
-  ViroMaterials,
-  ViroAnimations,
-  ViroConstants,
-  ViroBox,
-  ViroARObjectMarker,
-  Viro3DObject,
-  ViroARTrackingTargets,
-  ViroNode,
-  ViroText,
-} from '@akadrimer/react-viro'
+import { ViroARScene, ViroMaterials, ViroAnimations, ViroConstants, Viro3DObject } from '@akadrimer/react-viro'
 
 export default class LearningWithCardsAR extends Component {
   constructor() {
@@ -31,20 +19,35 @@ export default class LearningWithCardsAR extends Component {
     this._onInitialized = this._onInitialized.bind(this)
 
     ViroMaterials.createMaterials({
-      wolf: {
-        diffuseTexture: require('objects3D/Wolves_BaseColor.png'),
-      },
-      bus: {
-        diffuseTexture: require('objects3D/Bus.png'),
+      fox: {
+        diffuseTexture: require('objects3D/fox.png'),
       },
       airplane: {
-        diffuseTexture: require('objects3D/Airplane.png'),
+        diffuseTexture: require('objects3D/airplane.png'),
       },
       bird: {
-        diffuseTexture: require('objects3D/Bird.png'),
+        diffuseTexture: require('objects3D/bird.png'),
       },
-      dog: {
-        diffuseTexture: require('objects3D/Dog.png'),
+      zebra: {
+        diffuseTexture: require('objects3D/zebra.png'),
+      },
+      elephant: {
+        diffuseTexture: require('objects3D/elephant.png'),
+      },
+      car: {
+        diffuseTexture: require('objects3D/car.png'),
+      },
+      spaceShuttle: {
+        diffuseTexture: require('objects3D/spaceShuttle.png'),
+      },
+      bike: {
+        diffuseTexture: require('objects3D/bike.png'),
+      },
+      monkey: {
+        diffuseTexture: require('objects3D/monkey.png'),
+      },
+      motorcycle: {
+        diffuseTexture: require('objects3D/motorcycle.png'),
       },
     })
 
@@ -63,8 +66,8 @@ export default class LearningWithCardsAR extends Component {
       <>
         <ViroARScene onTrackingUpdated={this._onInitialized}>
           <Viro3DObject
-            source={require('objects3D/Bus.obj')}
-            materials={['bus']}
+            source={require('objects3D/car.obj')}
+            materials={['car']}
             position={[-0.0, -1.5, -1.5]}
             animation={{ name: 'rotate', run: true, loop: true }}
             scale={[0.01, 0.01, 0.01]}
