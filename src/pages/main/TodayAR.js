@@ -205,7 +205,7 @@ export default class TodayAR extends Component {
           </>
         )
       } else {
-        return (z
+        return (
           <>
             <ViroARScene onTrackingUpdated={this._onInitialized}>
               <Viro3DObject
