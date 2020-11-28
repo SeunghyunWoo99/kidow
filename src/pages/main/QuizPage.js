@@ -25,7 +25,7 @@ export default function QuizPage() {
       <View
         style={{
           width: 250 * size.widthRate,
-          height: 150 * size.widthRate,
+          height: 120 * size.widthRate,
           backgroundColor: color.background.mainLight,
           position: 'absolute',
           alignSelf: 'center',

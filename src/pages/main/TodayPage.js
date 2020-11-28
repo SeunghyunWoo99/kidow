@@ -9,12 +9,13 @@ export default function TodayPage() {
   const [sharedProps, setSharedProps] = useState(_sharedProps)
   const [todayWordText, setTodayWordText] = useState('여우')
 
+  var InitialARScene = require('./TodayAR')
   var _sharedProps = {
     apiKey: 'API_KEY_HERE',
   }
-  var InitialARScene = require('./TodayAR')
 
   let todayTextProps = {
+    text: todayWordText,
     func: setTodayWordText,
   }
 
@@ -24,7 +25,7 @@ export default function TodayPage() {
       <View
         style={{
           width: 250 * size.widthRate,
-          height: 150 * size.widthRate,
+          height: 120 * size.widthRate,
           backgroundColor: color.background.mainLight,
           position: 'absolute',
           alignSelf: 'center',

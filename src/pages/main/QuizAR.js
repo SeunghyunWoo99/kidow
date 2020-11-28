@@ -92,7 +92,7 @@ export default class QuizAR extends Component {
                     name="car"
                     source={require('objects3D/car.obj')}
                     materials={['car']}
-                    position={[-0.4, -0.31 - 1.5]}
+                    position={[-0.4, -0.31, -1.5]}
                     scale={[0.07, 0.07, 0.07]}
                     type="OBJ"
                     rotation={[0, 15, 0]}
@@ -160,7 +160,7 @@ export default class QuizAR extends Component {
                               // dragType="FixedToWorld"
                               // onDrag={() => {}}
                               onClick={() => {
-                                this._isCorrect('우주선', this.props.sceneNavigator.viroAppProps.text)
+                                this._isCorrect('얼룩말', this.props.sceneNavigator.viroAppProps.text)
                                 setTimeout(() => {
                                   this.setState({
                                     object: <></>,
@@ -211,7 +211,7 @@ export default class QuizAR extends Component {
                     // dragType="FixedToWorld"
                     // onDrag={() => {}}
                     onClick={() => {
-                      this._isCorrect('여우', this.props.sceneNavigator.viroAppProps.text)
+                      this._isCorrect('우주선', this.props.sceneNavigator.viroAppProps.text)
                       setTimeout(() => {
                         this.setState({
                           object: <></>,
@@ -241,7 +241,7 @@ export default class QuizAR extends Component {
           // dragType="FixedToWorld"
           // onDrag={() => {}}
           onClick={() => {
-            this._isCorrect('비행기', this.props.sceneNavigator.viroAppProps.text)
+            this._isCorrect('새', this.props.sceneNavigator.viroAppProps.text)
             setTimeout(() => {
               this.setState({
                 object: <></>,
@@ -296,13 +296,13 @@ export default class QuizAR extends Component {
     if (word === text) {
       this.setState({
         object: (
-          <ViroImage height={0.8} width={0.8} position={[0, -0.0, -1.0]} source={require('images/correct.png')} />
+          <ViroImage height={0.7} width={0.7} position={[0, -0.2, -1.0]} source={require('images/correct.png')} />
         ),
         isCorrect: true,
       })
     } else {
       this.setState({
-        object: <ViroImage height={0.8} width={0.8} position={[0, -0.0, -1.0]} source={require('images/wrong.png')} />,
+        object: <ViroImage height={0.7} width={0.7} position={[0, -0.2, -1.0]} source={require('images/wrong.png')} />,
         isCorrect: false,
       })
     }
