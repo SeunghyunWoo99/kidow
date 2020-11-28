@@ -185,8 +185,8 @@ export default class TodayAR extends Component {
                 name="giraffe"
                 source={require('objects3D/giraffe.obj')}
                 materials={['giraffe']}
-                position={[-0.0, -0.5, -1.5]}
-                scale={[0.002, 0.002, 0.002]}
+                position={[-0.0, -0.3, -1.5]}
+                scale={[0.003, 0.003, 0.003]}
                 type="OBJ"
                 // rotation={[-20, 0, 0]}
                 animation={{ name: 'rotate', run: true, loop: true }}
@@ -213,7 +213,7 @@ export default class TodayAR extends Component {
                 source={require('objects3D/bike.obj')}
                 materials={['bike']}
                 position={[-0.0, -0.5, -1.5]}
-                scale={[0.2, 0.2, 0.2]}
+                scale={[0.25, 0.25, 0.25]}
                 type="OBJ"
                 // rotation={[-20, 0, 0]}
                 animation={{ name: 'rotate', run: true, loop: true }}
