@@ -8,109 +8,23 @@ const THRESHOLD_NUMBER_OF_SELECTED_CARDS = 2
 
 const randomColors = ['#ffbf09', '#8A5E70', '#5BAD90']
 
-const UNKNOWN_WORDS = [
-  {
-    id: '0',
-    word: '바나나',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '1',
-    word: '기차',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '2',
-    word: '사과',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '3',
-    word: '할머니',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '4',
-    word: '병원',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '5',
-    word: '강아지',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '6',
-    word: '아빠',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '7',
-    word: '물개',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '8',
-    word: '동물원',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '9',
-    word: '책상',
-    date: new Date(2020, 10, 4),
-  },
-]
+const UNKNOWN_WORDS = []
 
 const KNOWN_WORDS = [
   {
-    id: '10',
-    word: '대외비',
-    date: new Date(2020, 10, 4),
+    id: '0',
+    word: '새',
+    date: new Date(2020, 11, 29),
   },
   {
-    id: '11',
-    word: '핍진성',
-    date: new Date(2020, 10, 4),
+    id: '1',
+    word: '여우',
+    date: new Date(2020, 11, 29),
   },
   {
-    id: '12',
-    word: '인플레이션',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '13',
-    word: '기축통화',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '14',
-    word: '배당주',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '15',
-    word: '존버',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '16',
-    word: '치맥',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '17',
-    word: '가화만사성',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '18',
-    word: 'ㅇㅈ',
-    date: new Date(2020, 10, 4),
-  },
-  {
-    id: '19',
-    word: '바다이야기',
-    date: new Date(2020, 10, 4),
+    id: '2',
+    word: '자동차',
+    date: new Date(2020, 11, 29),
   },
 ]
 
