@@ -1,5 +1,6 @@
 import React from 'react'
-import { Text, View, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { Text, View, ScrollView, TouchableOpacity, Image, ViewStyle } from 'react-native'
+import { Calendar } from 'react-native-calendars'
 import styled from 'styled-components/native'
 import { color, size } from 'common'
 import { Edit } from 'icons'
@@ -18,7 +19,7 @@ export default function ProfilePage() {
         paddingVertical: 20 * size.heightRate,
       }}>
       <Container>
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row', paddingVertical: 8 * size.heightRate }}>
           <View>
             <Image
               source={require('images/hoon.jpg')}
@@ -82,6 +83,56 @@ export default function ProfilePage() {
             </Text>
           </View>
         </View>
+      </Container>
+      <Container>
+        <Calendar
+          // testID={testIDs.calendars.FIRST}
+          current={'2020-11-28'}
+          // style={styles.calendar}
+          hideExtraDays
+          theme={{
+            backgroundColor: color.background.white,
+            calendarBackground: color.background.white,
+            textSectionTitleColor: '#b6c1cd',
+            textSectionTitleDisabledColor: color.text.secondary2,
+            selectedDayBackgroundColor: '#00adf5',
+            selectedDayTextColor: '#ffffff',
+            todayTextColor: color.text.mainDark,
+            dayTextColor: color.text.primary1,
+            textDisabledColor: color.text.secondary2,
+            arrowColor: color.palette.mainDark,
+            disabledArrowColor: color.text.secondary2,
+            dotColor: '#00adf5',
+            selectedDotColor: '#ffffff',
+            textDayFontFamily: 'BMJUA',
+            textMonthFontFamily: 'BMJUA',
+            textDayHeaderFontFamily: 'BMJUA',
+            textMonthFontWeight: 'bold',
+          }}
+          markedDates={{
+            '2020-11-03': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-04': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-07': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-09': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-13': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-14': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-17': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-19': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-23': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-24': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-27': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+          }}
+          markingType={'period'}
+          // onDayPress={onDayPress}
+          // markedDates={{
+          //   [selected]: {
+          //     selected: true,
+          //     disableTouchEvent: true,
+          //     selectedColor: 'orange',
+          //     selectedTextColor: 'red',
+          //   },
+          // }}
+        />
       </Container>
     </ScrollView>
   )
