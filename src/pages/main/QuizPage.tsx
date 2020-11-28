@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, ImageBackground, Pressable, Image } from 'react-native'
 import { size, color } from 'common'
+import { ViroARSceneNavigator, ViroARScene, ViroText } from 'react-viro'
 
 interface ResultIconProps {
   isCorrect: boolean
@@ -24,13 +25,31 @@ function ResultIcon({ isCorrect }: ResultIconProps) {
   )
 }
 
+const MainScene = () => {
+  return (
+    <ViroARScene>
+      <ViroText
+        text="Hello World"
+        position={[0, -0.1, -1]}
+        style={{
+          fontFamily: 'Arial',
+          fontSize: 40,
+          color: '#ffffff',
+          textAlignVertical: 'center',
+          textAlign: 'center',
+        }}
+      />
+    </ViroARScene>
+  )
+}
 export default function QuizPage() {
   const [isAnswered, setIsAnswered] = useState(false)
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <ImageBackground
+      <ViroARSceneNavigator initialScene={{ scene: MainScene }} />
+      {/* <ImageBackground
         source={require('images/quizCamera.png')}
         style={{ width: size.screenWidth, height: size.screenHeight, justifyContent: 'center', alignItems: 'center' }}>
         <View
@@ -73,7 +92,7 @@ export default function QuizPage() {
         }}
         style={{ position: 'absolute', left: 20, bottom: 10 }}>
         <Text>Toggle Result Icon</Text>
-      </Pressable>
+      </Pressable> */}
     </View>
   )
 }
