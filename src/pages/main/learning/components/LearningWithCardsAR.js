@@ -63,11 +63,11 @@ export default class LearningWithCardsAR extends Component {
       <>
         <ViroARScene onTrackingUpdated={this._onInitialized}>
           <Viro3DObject
-            source={require('objects3D/Wolves.obj')}
-            materials={['wolf']}
+            source={require('objects3D/Bus.obj')}
+            materials={['bus']}
             position={[-0.0, -1.5, -1.5]}
             animation={{ name: 'rotate', run: true, loop: true }}
-            scale={[0.1, 0.1, 0.1]}
+            scale={[0.01, 0.01, 0.01]}
             type="OBJ"
             dragType="FixedToWorld"
             onDrag={() => {}}
