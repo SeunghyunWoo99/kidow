@@ -65,7 +65,6 @@ export default class TodayAR extends Component {
           position={[-0.35, -0.5, -1.5]}
           scale={[0.05, 0.05, 0.05]}
           type="OBJ"
-          rotation={[0, 15, 0]}
           animation={{ name: 'bounceRev', run: true, loop: true }}
           // dragType="FixedToWorld"
           // onDrag={() => {}}
@@ -137,7 +136,7 @@ export default class TodayAR extends Component {
                                           materials={['motorcycle']}
                                           position={[-0.4, -0.5, -1.5]}
                                           scale={[0.06, 0.06, 0.06]}
-                                          rotation={[0, 13, 0]}
+                                          rotation={[0, -90, 0]}
                                           type="OBJ"
                                           animation={{ name: 'bounceRev', run: true, loop: true }}
                                           // dragType="FixedToWorld"
@@ -155,7 +154,7 @@ export default class TodayAR extends Component {
                                                       source={require('objects3D/giraffe.obj')}
                                                       materials={['giraffe']}
                                                       position={[-0.4, -0.5, -1.5]}
-                                                      scale={[0.002, 0.002, 0.002]}
+                                                      scale={[0.003, 0.003, 0.003]}
                                                       rotation={[0, 13, 0]}
                                                       type="OBJ"
                                                       animation={{ name: 'bounceRev', run: true, loop: true }}
@@ -245,7 +244,8 @@ export default class TodayAR extends Component {
                                           source={require('objects3D/bike.obj')}
                                           materials={['bike']}
                                           position={[0.0, -0.5, -1.5]}
-                                          scale={[0.2, 0.2, 0.2]}
+                                          scale={[0.25, 0.25, 0.25]}
+                                          rotation={[0, -90, 0]}
                                           type="OBJ"
                                           animation={{ name: 'bounceRev', run: true, loop: true }}
                                           // dragType="FixedToWorld"
@@ -296,10 +296,10 @@ export default class TodayAR extends Component {
                                 name="giraffe"
                                 source={require('objects3D/giraffe.obj')}
                                 materials={['giraffe']}
-                                position={[0.35, -0.5, -1.5]}
-                                scale={[0.002, 0.002, 0.002]}
+                                position={[0.35, -0.3, -1.5]}
+                                scale={[0.003, 0.003, 0.003]}
                                 type="OBJ"
-                                rotation={[0, -15, 0]}
+                                rotation={[0, -12, 0]}
                                 animation={{ name: 'bounceRev', run: true, loop: true }}
                                 // dragType="FixedToWorld"
                                 // onDrag={() => {}}
@@ -546,8 +546,8 @@ export default class TodayAR extends Component {
                 name="giraffe"
                 source={require('objects3D/giraffe.obj')}
                 materials={['giraffe']}
-                position={[-0.0, -0.5, -1.5]}
-                scale={[0.002, 0.002, 0.002]}
+                position={[-0.0, -0.3, -1.5]}
+                scale={[0.003, 0.003, 0.003]}
                 type="OBJ"
                 // rotation={[-20, 0, 0]}
                 animation={{ name: 'rotate', run: true, loop: true }}
@@ -574,7 +574,7 @@ export default class TodayAR extends Component {
                 source={require('objects3D/bike.obj')}
                 materials={['bike']}
                 position={[-0.0, -0.5, -1.5]}
-                scale={[0.2, 0.2, 0.2]}
+                scale={[0.25, 0.25, 0.25]}
                 type="OBJ"
                 // rotation={[-20, 0, 0]}
                 animation={{ name: 'rotate', run: true, loop: true }}
