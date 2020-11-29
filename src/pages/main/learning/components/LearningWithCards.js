@@ -22,6 +22,121 @@ const StyledView = styled(View)`
 let stack = 0
 let takePhotoInterval = null
 
+function LookingForCard() {
+  return (
+    <>
+      <View
+        style={{
+          width: '80%',
+          alignSelf: 'center',
+          height: 240 * size.widthRate,
+          backgroundColor: '#00000088',
+          position: 'absolute',
+          zIndex: 10000,
+        }}
+      />
+      <View
+        style={{
+          width: '80%',
+          alignSelf: 'center',
+          height: 205 * size.widthRate,
+          bottom: 0,
+          backgroundColor: '#00000088',
+          position: 'absolute',
+          zIndex: 10000,
+        }}
+      />
+      <View
+        style={{
+          width: '10%',
+          height: '100%',
+          backgroundColor: '#00000088',
+          position: 'absolute',
+          left: 0,
+          zIndex: 10000,
+        }}
+      />
+      <View
+        style={{
+          width: '10%',
+          height: '100%',
+          backgroundColor: '#00000088',
+          position: 'absolute',
+          right: 0,
+          zIndex: 10000,
+        }}
+      />
+      <View style={{ width: '100%', height: '100%', position: 'absolute', alignItems: 'center', zIndex: 10000 }}>
+        <Text
+          style={{
+            position: 'absolute',
+            fontFamily: 'BMJUA',
+            fontSize: size.normalizeFontSize(20),
+            color: color.text.white,
+            top: 200 * size.heightRate,
+          }}>
+          점선 안에 카드를 위치시키세요
+        </Text>
+        {/* <Text
+          style={{
+            position: 'absolute',
+            fontFamily: 'BMJUA',
+            fontSize: size.normalizeFontSize(20),
+            color: color.text.white,
+            top: 280 * size.heightRate,
+            textShadowColor: '#444',
+            textShadowOffset: { width: 1, height: 1 },
+            textShadowRadius: 10 * size.widthRate,
+          }}>
+          단어 '얼룩말'은 아직 준비되어있지 않아요
+        </Text> */}
+        <View
+          style={{
+            top: 260 * size.heightRate,
+            width: 306 * size.widthRate,
+            height: 184 * size.widthRate,
+            borderStyle: 'dashed',
+            borderColor: color.palette.white,
+            borderRadius: 4 * size.widthRate,
+            borderWidth: 4 * size.widthRate,
+            backgroundColor: 'transparent',
+          }}
+        />
+        {/* <TouchableOpacity
+          style={{
+            width: 160 * size.widthRate,
+            height: 42 * size.widthRate,
+            position: 'absolute',
+            bottom: 88 * size.widthRate,
+            alignSelf: 'center',
+            borderRadius: 16 * size.widthRate,
+            marginBottom: 12 * size.heightRate,
+            backgroundColor: color.button.mainDark,
+            justifyContent: 'center',
+            alignItems: 'center',
+            shadowOpacity: 0.7,
+            shadowColor: 'rgb(100, 100, 100)',
+            shadowRadius: 10,
+            shadowOffset: {
+              width: 3,
+              height: 5,
+            },
+          }}>
+          <Text
+            style={{
+              fontFamily: 'BMJUA',
+              fontSize: size.normalizeFontSize(17),
+              fontWeight: 'bold',
+              color: color.text.white,
+            }}>
+            이 단어 요청하기
+          </Text>
+        </TouchableOpacity> */}
+      </View>
+    </>
+  )
+}
+
 const LearningWithCards = () => {
   const [showModal, setShowModal] = useState(true)
 
@@ -97,7 +212,8 @@ const LearningWithCards = () => {
             type={RNCamera.Constants.Type.back}
             captureAudio={false}
           />
-          <StyledView x={0.25 * 360} y={0.33 * 600} w={0.5 * 360} h={0.25 * 600} />
+          {/* <SvgMaskedDim /> */}
+          {/* <StyledView x={0.25 * 360} y={0.33 * 600} w={0.5 * 360} h={0.25 * 600} /> */}
           {chars.map &&
             chars.map((item, index) => {
               if (index === 0) {
@@ -116,6 +232,7 @@ const LearningWithCards = () => {
                 )
               }
             })}
+          <LookingForCard />
           <Modal
             isVisible={isModalVisible}
             onBackButtonPress={() => setModalVisible(false)}
