@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TouchableOpacity, View, Text } from 'react-native'
 import { ViroARSceneNavigator } from '@akadrimer/react-viro'
 import { color, size } from 'common'
+import { DailyLearningStart } from 'modal'
 
 import Modal from 'react-native-modal'
 
@@ -22,6 +23,8 @@ let stack = 0
 let takePhotoInterval = null
 
 const LearningWithCards = () => {
+  const [showModal, setShowModal] = useState(true)
+
   var InitialARScene = require('./LearningWithCardsAR')
 
   //modal
@@ -225,6 +228,7 @@ const LearningWithCards = () => {
               </TouchableOpacity>
             </View>
           </Modal>
+          <DailyLearningStart {...{ showModal, setShowModal }} />
         </>
       )}
     </>

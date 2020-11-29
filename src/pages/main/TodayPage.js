@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import { Text, View, ImageBackground, Pressable, Image } from 'react-native'
 import { size, color } from 'common'
 import { ViroARSceneNavigator } from '@akadrimer/react-viro'
+import { DailyLearningResultReport } from 'modal'
 
 export default function TodayPage() {
   const [navigatorType, setNavigatorType] = useState('UNSET')
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
   const [todayWordText, setTodayWordText] = useState('여우')
+
+  const [showModal, setShowModal] = useState(false)
 
   var InitialARScene = require('./TodayAR')
   var _sharedProps = {
@@ -17,6 +20,7 @@ export default function TodayPage() {
   let todayTextProps = {
     text: todayWordText,
     func: setTodayWordText,
+    setShowModal,
   }
 
   return (
@@ -36,6 +40,7 @@ export default function TodayPage() {
         }}>
         <Text style={{ fontSize: size.normalizeFontSize(72) }}>{todayWordText}</Text>
       </View>
+      <DailyLearningResultReport {...{ showModal, setShowModal }} />
     </View>
   )
 }

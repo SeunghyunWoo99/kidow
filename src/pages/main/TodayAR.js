@@ -63,6 +63,7 @@ export default class TodayAR extends Component {
       quizObject: 1,
       reviewObject: 1,
       count: 0,
+      showModal: false,
     }
 
     ViroAnimations.registerAnimations({
@@ -527,10 +528,10 @@ export default class TodayAR extends Component {
                     if (this.state.count === 1) {
                       this.setState({
                         object: <></>,
-                        quizObject: 2,
+                        quizObject: 5,
                         count: 0,
                       })
-                      this.props.sceneNavigator.viroAppProps.func('자동차')
+                      this.props.sceneNavigator.viroAppProps.func('기린')
                     } else {
                       this.setState({
                         object: <></>,
@@ -663,9 +664,11 @@ export default class TodayAR extends Component {
                 animation={{ name: 'rotate', run: true, loop: true }}
                 // dragType="FixedToWorld"
                 // onDrag={() => {}}
-                onClick={() => {
+                onLoadEnd={() => {
                   setTimeout(() => {
-                    this.props.sceneNavigator.viroAppProps.func('끝')
+                    //NOTE
+                    console.log
+                    this.props.sceneNavigator.viroAppProps.setShowModal(true)
                   }, 5000)
                 }}
               />

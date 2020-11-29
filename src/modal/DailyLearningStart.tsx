@@ -1,18 +1,27 @@
 import React from 'react'
 import { Text, View, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import ReactModal from 'react-native-modal'
 import { color, size } from 'common'
 
 interface ModalProps {
-  setShowModal: (showModal: boolean) => void
+  /** 모달 show 여부 */
+  showModal?: boolean
+  /** 모달 show 여부 set 함수 */
+  setShowModal: (state: boolean) => void
+  /** 전역 모달일 때 창 닫힌 후 모달 삭제 */
+  removeModal?: () => void
 }
 
-export default function DailyLearningStart({ setShowModal }: ModalProps) {
+export default function DailyLearningStart({ showModal, setShowModal, removeModal }: ModalProps) {
+  const navigation = useNavigation()
+
   return (
     <ReactModal
-      isVisible={true}
-      onBackButtonPress={() => setShowModal(false)}
-      onBackdropPress={() => setShowModal(false)}>
+      isVisible={showModal}
+      onBackButtonPress={() => setShowModal && setShowModal(false)}
+      onBackdropPress={() => setShowModal && setShowModal(false)}
+      onModalHide={() => removeModal && removeModal()}>
       <View
         style={{
           backgroundColor: color.background.mainLight,
@@ -86,7 +95,10 @@ export default function DailyLearningStart({ setShowModal }: ModalProps) {
               height: 5,
             },
           }}
-          onPress={() => {}}>
+          onPress={() => {
+            setShowModal(false)
+            navigation.navigate('TodayPage')
+          }}>
           <Text
             style={{
               fontFamily: 'BMJUA',
@@ -96,7 +108,11 @@ export default function DailyLearningStart({ setShowModal }: ModalProps) {
             네
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            setShowModal(false)
+            navigation.navigate('SettingStackNavigator')
+          }}>
           <Text
             style={{
               fontFamily: 'BMJUA',

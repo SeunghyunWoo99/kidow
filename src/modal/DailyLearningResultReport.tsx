@@ -1,18 +1,27 @@
 import React from 'react'
 import { Text, View, Image, TouchableOpacity } from 'react-native'
 import ReactModal from 'react-native-modal'
+import { useNavigation } from '@react-navigation/native'
 import { color, size } from 'common'
 
 interface ModalProps {
-  setShowModal: (showModal: boolean) => void
+  /** 모달 show 여부 */
+  showModal?: boolean
+  /** 모달 show 여부 set 함수 */
+  setShowModal: (state: boolean) => void
+  /** 전역 모달일 때 창 닫힌 후 모달 삭제 */
+  removeModal?: () => void
 }
 
-export default function DailyLearningResultReport({ setShowModal }: ModalProps) {
+export default function DailyLearningResultReport({ showModal, setShowModal, removeModal }: ModalProps) {
+  const navigation = useNavigation()
+
   return (
     <ReactModal
-      isVisible={true}
+      isVisible={showModal}
       onBackButtonPress={() => setShowModal(false)}
-      onBackdropPress={() => setShowModal(false)}>
+      onBackdropPress={() => setShowModal(false)}
+      onModalHide={() => removeModal && removeModal()}>
       <View
         style={{
           backgroundColor: color.background.mainLight,
@@ -59,7 +68,7 @@ export default function DailyLearningResultReport({ setShowModal }: ModalProps) 
             textAlign: 'center',
             marginBottom: 16 * size.heightRate,
           }}>
-          {'이진우 어린이, 오늘로'}
+          {'김훈래 어린이, 오늘로'}
           <Text
             style={{
               fontSize: size.normalizeFontSize(24),
@@ -83,7 +92,7 @@ export default function DailyLearningResultReport({ setShowModal }: ModalProps) 
               fontSize: size.normalizeFontSize(24),
               color: color.text.primary1,
             }}>
-            {' 12 '}
+            {' 6 '}
           </Text>
           {'분 동안'}
         </Text>
@@ -101,7 +110,7 @@ export default function DailyLearningResultReport({ setShowModal }: ModalProps) 
               fontSize: size.normalizeFontSize(24),
               color: color.text.primary1,
             }}>
-            {' 10 '}
+            {' 5 '}
           </Text>
           {'개를 배웠어요.'}
         </Text>
@@ -119,7 +128,7 @@ export default function DailyLearningResultReport({ setShowModal }: ModalProps) 
               fontSize: size.normalizeFontSize(24),
               color: color.text.primary1,
             }}>
-            {' 10 '}
+            {' 5 '}
           </Text>
           {'개 중'}
           <Text
@@ -127,7 +136,7 @@ export default function DailyLearningResultReport({ setShowModal }: ModalProps) 
               fontSize: size.normalizeFontSize(24),
               color: color.text.primary1,
             }}>
-            {' 5 '}
+            {' 3 '}
           </Text>
           {'개를 맞았어요.'}
         </Text>
@@ -159,7 +168,10 @@ export default function DailyLearningResultReport({ setShowModal }: ModalProps) 
               height: 5,
             },
           }}
-          onPress={() => {}}>
+          onPress={() => {
+            setShowModal(false)
+            navigation.navigate('ReviewPage')
+          }}>
           <Text
             style={{
               fontFamily: 'BMJUA',
