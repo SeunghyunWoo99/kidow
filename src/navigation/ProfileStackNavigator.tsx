@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, Text, StatusBar } from 'react-native'
+import { TouchableOpacity, Text, StatusBar, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { size, color } from 'common'
@@ -31,11 +31,12 @@ export default function ProfileStackNavigator() {
                   fontFamily: 'BMJUA',
                   fontSize: size.normalizeFontSize(18),
                   color: color.text.primary1,
+                  alignSelf: 'center',
                 }}>
                 마이페이지
               </Text>
             ),
-            headerLeft: () => null,
+            headerLeft: () => <View style={{ marginHorizontal: 20 * size.widthRate }} />,
             headerRight: () => (
               <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginHorizontal: 20 * size.widthRate }}>
                 <Text
