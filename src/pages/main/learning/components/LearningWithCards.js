@@ -123,6 +123,7 @@ const LearningWithCards = () => {
                 width: 300 * size.widthRate,
                 borderRadius: 16 * size.widthRate,
                 shadowOpacity: 0.7,
+                elevation: 3,
                 shadowColor: 'rgb(100, 100, 100)',
                 shadowRadius: 10,
                 shadowOffset: {
@@ -178,6 +179,7 @@ const LearningWithCards = () => {
                   width: 300 * size.widthRate,
                   borderRadius: 16 * size.widthRate,
                   shadowOpacity: 0.7,
+                  elevation: 3,
                   shadowColor: 'rgb(100, 100, 100)',
                   shadowRadius: 10,
                   shadowOffset: {
@@ -200,6 +202,7 @@ const LearningWithCards = () => {
                   justifyContent: 'center',
                   alignItems: 'center',
                   shadowOpacity: 0.5,
+                  elevation: 3,
                   shadowColor: 'rgb(100, 100, 100)',
                   shadowRadius: 8 * size.widthRate,
                   shadowOffset: {

@@ -64,6 +64,7 @@ function Cell({ label, disabled, children, haveDetails }: CellProps) {
         backgroundColor: color.background.white,
         justifyContent: 'center',
         shadowOpacity: 0.1,
+        elevation: 3,
         shadowColor: 'rgb(100, 100, 100)',
         shadowRadius: 10,
         shadowOffset: {
@@ -106,6 +107,7 @@ function MiniCell({ label }) {
         alignItems: 'center',
         justifyContent: 'center',
         shadowOpacity: 0.1,
+        elevation: 3,
         shadowColor: 'rgb(100, 100, 100)',
         shadowRadius: 10,
         shadowOffset: {

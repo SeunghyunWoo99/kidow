@@ -19,6 +19,7 @@ export default function LearningWithoutCards() {
           height: 100 * size.widthRate,
           borderRadius: 24 * size.widthRate,
           shadowOpacity: 0.7,
+          elevation: 3,
           shadowColor: 'rgb(100, 100, 100)',
           shadowRadius: 10 * size.widthRate,
           shadowOffset: {

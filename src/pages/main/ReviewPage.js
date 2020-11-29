@@ -46,6 +46,7 @@ function WordContainer({ wordData, index, onSelected, onDeselected }) {
         justifyContent: 'space-between',
         alignItems: 'center',
         shadowOpacity: 0.2,
+        elevation: 3,
         shadowColor: 'rgb(100, 100, 100)',
         shadowRadius: 5,
         shadowOffset: {
@@ -173,6 +174,7 @@ export default function ReviewPage() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 shadowOpacity: 0.7,
+                elevation: 3,
                 shadowColor: 'rgb(100, 100, 100)',
                 shadowRadius: 10,
                 shadowOffset: {

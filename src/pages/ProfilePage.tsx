@@ -69,6 +69,7 @@ export default function ProfilePage() {
                 right: 0,
                 bottom: 0,
                 shadowOpacity: 0.4,
+                elevation: 3,
                 shadowColor: 'rgb(100, 100, 100)',
                 shadowRadius: 10,
                 shadowOffset: {

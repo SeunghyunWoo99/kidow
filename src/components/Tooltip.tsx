@@ -86,6 +86,7 @@ export default function Tooltip(props: TooltipProps) {
               justifyContent: 'center',
               backgroundColor: color.background.mainLight,
               shadowOpacity: 0.6,
+              elevation: 3,
               shadowColor: 'rgb(100, 100, 100)',
               shadowRadius: 10,
               shadowOffset: {

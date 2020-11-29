@@ -119,6 +119,7 @@ export default function MainTabBar({ state, descriptors, navigation }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     shadowOpacity: 0.4,
+                    elevation: 3,
                     shadowColor: 'rgb(100, 100, 100)',
                     shadowRadius: 10,
                     shadowOffset: {
@@ -175,6 +176,7 @@ export default function MainTabBar({ state, descriptors, navigation }) {
           alignItems: 'center',
           justifyContent: 'center',
           shadowOpacity: 0.4,
+          elevation: 3,
           shadowColor: 'rgb(100, 100, 100)',
           shadowRadius: 10,
           shadowOffset: {

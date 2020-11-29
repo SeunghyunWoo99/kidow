@@ -24,6 +24,7 @@ export default function FrontPage() {
             justifyContent: 'center',
             alignItems: 'center',
             shadowOpacity: 0.7,
+            elevation: 3,
             shadowColor: 'rgb(100, 100, 100)',
             shadowRadius: 10,
             shadowOffset: {
