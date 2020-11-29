@@ -38,7 +38,13 @@ export default function TodayPage() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{ fontSize: size.normalizeFontSize(72) }}>{todayWordText}</Text>
+        <Text
+          style={{
+            fontFamily: 'BMJUA',
+            fontSize: size.normalizeFontSize(64),
+          }}>
+          {todayWordText}
+        </Text>
       </View>
       <DailyLearningResultReport {...{ showModal, setShowModal }} />
     </View>

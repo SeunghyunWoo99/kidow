@@ -8,17 +8,28 @@ const THRESHOLD_NUMBER_OF_SELECTED_CARDS = 2
 
 const randomColors = ['#ffbf09', '#8A5E70', '#5BAD90']
 
-const UNKNOWN_WORDS = []
-
-const KNOWN_WORDS = [
+const UNKNOWN_WORDS = [
   {
     id: '0',
-    word: '새',
+    word: '여우',
     date: new Date(2020, 11, 29),
   },
   {
     id: '1',
-    word: '여우',
+    word: '자전거',
+    date: new Date(2020, 11, 29),
+  },
+]
+
+const KNOWN_WORDS = [
+  {
+    id: '0',
+    word: '기린',
+    date: new Date(2020, 11, 29),
+  },
+  {
+    id: '1',
+    word: '새',
     date: new Date(2020, 11, 29),
   },
   {
@@ -39,7 +50,7 @@ function WordContainer({ wordData, index, onSelected, onDeselected }) {
         backgroundColor: isSelected ? randomColor : color.background.white,
         flexDirection: 'row',
         marginVertical: 8 * size.widthRate,
-        width: 340 * size.widthRate,
+        width: 325 * size.widthRate,
         height: 80 * size.widthRate,
         borderRadius: 10 * size.widthRate,
         paddingHorizontal: 24 * size.widthRate,
@@ -121,9 +132,10 @@ export default function ReviewPage() {
                   fontFamily: 'BMJUA',
                   fontSize: size.normalizeFontSize(24),
                   color: color.text.primary1,
-                  marginLeft: 28 * size.widthRate,
                   marginBottom: 12 * size.widthRate,
                   textAlign: 'center',
+                  alignSelf: 'center',
+                  marginTop: 48 * size.widthRate,
                 }}>
                 잘 모르겠어요
               </Text>
@@ -141,10 +153,10 @@ export default function ReviewPage() {
                   fontFamily: 'BMJUA',
                   fontSize: size.normalizeFontSize(24),
                   color: color.text.mainDark,
-                  marginLeft: 28 * size.widthRate,
                   marginBottom: 12 * size.widthRate,
                   marginTop: 32 * size.widthRate,
                   textAlign: 'center',
+                  alignSelf: 'center',
                 }}>
                 잘 알아요
               </Text>
@@ -157,7 +169,7 @@ export default function ReviewPage() {
                   onDeselected={onWordDeselected}
                 />
               ))}
-              <View style={{ marginBottom: 80 * size.widthRate }} />
+              <View style={{ marginBottom: 160 * size.widthRate }} />
             </ScrollView>
             <TouchableOpacity
               style={{
