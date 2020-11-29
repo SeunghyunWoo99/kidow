@@ -35,7 +35,6 @@ export default function LearningWithoutCards() {
             fontFamily: 'BMJUA',
             fontSize: size.normalizeFontSize(48),
             color: color.text.primary1,
-            fontWeight: 'bold',
             textAlign: 'center',
             textShadowColor: '#333',
             textShadowOffset: { width: 1, height: 1 },

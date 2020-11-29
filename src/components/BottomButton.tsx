@@ -115,7 +115,6 @@ export default function BottomButton(props: BottomButtonProps) {
           style={{
             fontFamily: 'BMJUA',
             fontSize: size.normalizeFontSize(17),
-            fontWeight: 'bold',
             color: color.text.white,
           }}>
           {props.label}

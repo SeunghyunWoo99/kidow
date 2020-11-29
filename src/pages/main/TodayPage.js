@@ -34,7 +34,7 @@ export default function TodayPage() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{ fontSize: size.normalizeFontSize(72), fontWeight: 'bold' }}>{todayWordText}</Text>
+        <Text style={{ fontSize: size.normalizeFontSize(72) }}>{todayWordText}</Text>
       </View>
     </View>
   )

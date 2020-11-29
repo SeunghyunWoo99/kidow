@@ -45,7 +45,6 @@ export default function DailyLearningStart({ setShowModal }: ModalProps) {
             fontFamily: 'BMJUA',
             fontSize: size.normalizeFontSize(24),
             color: color.text.primary1,
-            fontWeight: 'bold',
             textAlign: 'center',
             marginBottom: 16 * size.heightRate,
           }}>
@@ -92,7 +91,6 @@ export default function DailyLearningStart({ setShowModal }: ModalProps) {
             style={{
               fontFamily: 'BMJUA',
               fontSize: size.normalizeFontSize(20),
-              fontWeight: 'bold',
               color: color.text.white,
             }}>
             네

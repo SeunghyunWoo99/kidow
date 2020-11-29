@@ -99,7 +99,6 @@ export default function Tooltip(props: TooltipProps) {
                 fontSize: size.normalizeFontSize(16),
                 color: color.text.primary1,
                 textAlign: 'center',
-                fontWeight: 'bold',
               }}>
               {props.text}
             </Text>

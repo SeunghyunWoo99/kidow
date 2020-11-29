@@ -218,7 +218,6 @@ const LearningWithCards = () => {
                   style={{
                     fontFamily: 'BMJUA',
                     fontSize: size.normalizeFontSize(20),
-                    fontWeight: 'bold',
                     color: color.text.white,
                   }}>
                   네

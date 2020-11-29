@@ -124,7 +124,6 @@ export default function ReviewPage() {
                   marginLeft: 28 * size.widthRate,
                   marginBottom: 12 * size.widthRate,
                   textAlign: 'center',
-                  // fontWeight: 'bold',
                 }}>
                 잘 모르겠어요
               </Text>
@@ -146,7 +145,6 @@ export default function ReviewPage() {
                   marginBottom: 12 * size.widthRate,
                   marginTop: 32 * size.widthRate,
                   textAlign: 'center',
-                  // fontWeight: 'bold',
                 }}>
                 잘 알아요
               </Text>
@@ -188,7 +186,6 @@ export default function ReviewPage() {
                 style={{
                   fontFamily: 'BMJUA',
                   fontSize: size.normalizeFontSize(17),
-                  fontWeight: 'bold',
                   color: color.text.white,
                 }}>
                 복습 하기

@@ -37,7 +37,6 @@ export default function FrontPage() {
             style={{
               fontFamily: 'BMJUA',
               fontSize: size.normalizeFontSize(20),
-              fontWeight: 'bold',
               color: color.text.white,
             }}>
             로그인 하기
@@ -46,9 +45,10 @@ export default function FrontPage() {
         <TouchableOpacity onPress={() => navigation.navigate('SignUpStackNavigator')}>
           <Text
             style={{
+              fontFamily: 'BMJUA',
               fontSize: size.normalizeFontSize(14),
               color: color.text.secondary1,
-              marginTop: 32 * size.widthRate,
+              marginTop: 28 * size.widthRate,
             }}>
             회원이 아니신가요?{' '}
             <Text

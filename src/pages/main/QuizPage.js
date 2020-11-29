@@ -34,7 +34,7 @@ export default function QuizPage() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{ fontSize: size.normalizeFontSize(72), fontWeight: 'bold' }}>{wordText}</Text>
+        <Text style={{ fontSize: size.normalizeFontSize(72) }}>{wordText}</Text>
       </View>
     </View>
   )
