@@ -6,7 +6,6 @@ import { color, size } from 'common'
 import { Edit, RightArrow } from 'icons'
 
 const DATA = [
-  '2020.11.30',
   '2020.11.29',
   '2020.11.27',
   '2020.11.23',
@@ -116,7 +115,7 @@ export default function ProfilePage() {
       <Container>
         <Calendar
           // testID={testIDs.calendars.FIRST}
-          current={'2020-11-28'}
+          current={'2020-11-30'}
           // style={styles.calendar}
           hideExtraDays
           theme={{
@@ -139,17 +138,17 @@ export default function ProfilePage() {
             textMonthFontWeight: 'bold',
           }}
           markedDates={{
-            '2020-11-03': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-04': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-07': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-09': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-13': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-14': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-11': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-12': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-15': { color: color.palette.mainLight, startingDay: true, endingDay: true },
             '2020-11-17': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-19': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-20': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-21': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-22': { color: color.palette.mainLight, startingDay: true, endingDay: true },
             '2020-11-23': { color: color.palette.mainLight, startingDay: true, endingDay: true },
-            '2020-11-24': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-18': { color: color.palette.mainLight, startingDay: true, endingDay: true },
             '2020-11-27': { color: color.palette.mainLight, startingDay: true, endingDay: true },
+            '2020-11-29': { color: color.palette.mainLight, startingDay: true, endingDay: true },
           }}
           markingType={'period'}
           // onDayPress={onDayPress}
@@ -176,6 +175,7 @@ export default function ProfilePage() {
       </Text>
       {DATA.map((label) => (
         <Container
+          key={label}
           style={{
             margin: 4 * size.widthRate,
             flexDirection: 'row',
