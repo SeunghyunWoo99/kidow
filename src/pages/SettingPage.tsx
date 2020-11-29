@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from 'react'
-import { Text, View, ScrollView, TouchableOpacity, Slider, Image } from 'react-native'
+import { Text, View, ScrollView, TouchableOpacity, Image, ViewStyle } from 'react-native'
+import Slider from '@react-native-community/slider'
 import { color, size } from 'common'
 
 interface CellContainerProps {
@@ -43,35 +44,39 @@ interface CellProps {
   label?: string
   children?: ReactNode
   haveDetails?: boolean
+  style?: ViewStyle
 }
 
-function Cell({ label, disabled, children, haveDetails }: CellProps) {
+function Cell({ label, disabled, children, haveDetails, style }: CellProps) {
   const [isSelected, setIsSelected] = useState(false)
 
   return (
     <TouchableOpacity
       onPress={() => setIsSelected((prev) => !prev)}
       disabled={disabled}
-      style={{
-        width: 325 * size.widthRate,
-        // height: 40 * size.widthRate,
-        borderRadius: 20 * size.widthRate,
-        borderColor: color.palette.mainDark,
-        borderWidth: isSelected ? 1 : 0,
-        paddingVertical: 10 * size.widthRate,
-        paddingHorizontal: 24 * size.widthRate,
-        marginVertical: 4 * size.heightRate,
-        backgroundColor: color.background.white,
-        justifyContent: 'center',
-        shadowOpacity: 0.1,
-        elevation: 3,
-        shadowColor: 'rgb(100, 100, 100)',
-        shadowRadius: 10,
-        shadowOffset: {
-          width: 1,
-          height: 1,
+      style={[
+        {
+          width: 325 * size.widthRate,
+          // height: 40 * size.widthRate,
+          borderRadius: 20 * size.widthRate,
+          borderColor: color.palette.mainDark,
+          borderWidth: isSelected ? 1 : 0,
+          paddingVertical: 10 * size.widthRate,
+          paddingHorizontal: 24 * size.widthRate,
+          marginVertical: 4 * size.heightRate,
+          backgroundColor: color.background.white,
+          justifyContent: 'center',
+          shadowOpacity: 0.1,
+          elevation: 3,
+          shadowColor: 'rgb(100, 100, 100)',
+          shadowRadius: 10,
+          shadowOffset: {
+            width: 1,
+            height: 1,
+          },
         },
-      }}>
+        { ...style },
+      ]}>
       <View style={{ flexDirection: 'row', alignContent: 'center' }}>
         {label && (
           <Text
@@ -128,7 +133,8 @@ function MiniCell({ label }) {
 }
 
 export default function SettingPage() {
-  const [selectedValue, setSelectedValue] = useState('java')
+  const [learningTime, setLearningTime] = useState(5)
+  const [vocaNum, setVocaNum] = useState(5)
 
   return (
     <ScrollView
@@ -142,22 +148,81 @@ export default function SettingPage() {
         <Cell label={'하'} />
       </CellContainer>
       <CellContainer title={'기본 학습 시간'}>
-        <Cell label={'기본 10분 학습'} disabled={true}>
+        <Cell label={`기본 ${learningTime}초 학습`} disabled={true}>
           <Slider
             style={{ width: 300 * size.widthRate, height: 40 * size.widthRate, alignSelf: 'center' }}
-            minimumValue={0}
+            minimumValue={0.01}
             maximumValue={1}
             minimumTrackTintColor={color.palette.mainDark}
             maximumTrackTintColor="#00000022"
+            thumbTintColor={color.background.white}
+            value={0.5}
+            step={0.1}
+            onValueChange={(value) => {
+              setLearningTime(Math.ceil(value * 10))
+            }}
           />
         </Cell>
       </CellContainer>
       <CellContainer title={'학습 단어 갯수'}>
-        <Cell label={'단어 10개'} disabled={true} />
-      </CellContainer>
-      <CellContainer title={'기본 학습 방법'}>
-        <Cell label={'카드로 학습'} />
-        <Cell label={'카드 없이 학습'} />
+        <Cell
+          label={'단어'}
+          disabled={true}
+          style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+          <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity
+              style={{
+                borderWidth: 1,
+                borderRadius: 4 * size.widthRate,
+                borderColor: color.text.secondary2,
+                width: 18 * size.widthRate,
+                height: 14 * size.widthRate,
+                marginHorizontal: 12 * size.widthRate,
+              }}
+              onPress={() => setVocaNum((n) => (n <= 1 ? 1 : --n))}
+              hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}>
+              <Text
+                style={{
+                  fontFamily: 'BMJUA',
+                  fontSize: size.normalizeFontSize(14),
+                  color: color.text.secondary2,
+                  alignSelf: 'center',
+                }}>
+                -
+              </Text>
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontFamily: 'BMJUA',
+                fontSize: size.normalizeFontSize(18),
+                color: color.text.primary1,
+                alignSelf: 'center',
+              }}>
+              {`${vocaNum}개`}
+            </Text>
+            <TouchableOpacity
+              style={{
+                borderWidth: 1,
+                borderRadius: 4 * size.widthRate,
+                borderColor: color.text.secondary2,
+                width: 18 * size.widthRate,
+                height: 14 * size.widthRate,
+                marginHorizontal: 12 * size.widthRate,
+              }}
+              onPress={() => setVocaNum((n) => (n >= 10 ? 10 : ++n))}
+              hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}>
+              <Text
+                style={{
+                  fontFamily: 'BMJUA',
+                  fontSize: size.normalizeFontSize(14),
+                  color: color.text.secondary2,
+                  alignSelf: 'center',
+                }}>
+                +
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </Cell>
       </CellContainer>
       <CellContainer>
         <Cell label={'알림 설정'} disabled={true} haveDetails={true} />
