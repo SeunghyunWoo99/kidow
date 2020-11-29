@@ -386,7 +386,8 @@ export default class QuizAR extends Component {
                     object: <></>,
                   })
                   if (this.state.isCorrect) {
-                    this.props.sceneNavigator.viroAppProps.func('끝')
+                    // this.props.sceneNavigator.viroAppProps.func('끝')
+                    this.props.sceneNavigator.viroAppProps.setShowModal(true)
                   }
                 }, 5000)
               }}

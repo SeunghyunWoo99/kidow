@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { Text, View, ImageBackground, Pressable, Image } from 'react-native'
 import { size, color } from 'common'
 import { ViroARSceneNavigator } from '@akadrimer/react-viro'
+import { QuizEnd } from 'modal'
 
 export default function QuizPage() {
   const [navigatorType, setNavigatorType] = useState('UNSET')
   // console.log(navigatorType);
   const [sharedProps, setSharedProps] = useState(_sharedProps)
   const [wordText, setWordText] = useState('여우')
+  const [showModal, setShowModal] = useState(false)
 
   var InitialARScene = require('./QuizAR')
   var _sharedProps = {
@@ -17,6 +19,7 @@ export default function QuizPage() {
   let textProps = {
     text: wordText,
     func: setWordText,
+    setShowModal,
   }
 
   return (
@@ -34,8 +37,9 @@ export default function QuizPage() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{ fontSize: size.normalizeFontSize(72) }}>{wordText}</Text>
+        <Text style={{ fontFamily: 'BMJUA', fontSize: size.normalizeFontSize(64) }}>{wordText}</Text>
       </View>
+      <QuizEnd {...{ showModal, setShowModal }} />
     </View>
   )
 }

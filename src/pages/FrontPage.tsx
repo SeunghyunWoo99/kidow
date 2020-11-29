@@ -60,13 +60,13 @@ export default function FrontPage() {
           </Text>
         </TouchableOpacity>
       </View>
-      <Pressable
+      {/* <Pressable
         onPress={() => {
           navigation.navigate('RootStackNavigator')
         }}
         style={{ position: 'absolute', left: 20, bottom: 10 }}>
         <Text>Main</Text>
-      </Pressable>
+      </Pressable> */}
     </View>
   )
 }

@@ -166,7 +166,7 @@ const LearningWithCards = () => {
           return res.base64
         })
         .then((res) => {
-          return axios.post('http://192.168.0.3:3001/upload', { img: res })
+          return axios.post('http://192.168.219.113:3001/upload', { img: res })
         })
         .then((res) => {
           setChars(res.data)
@@ -181,19 +181,19 @@ const LearningWithCards = () => {
   }
   useEffect(() => {
     // Sun & Nal
-    // takePhotoInterval = setInterval(takePhoto, 1000)
-    // setTimeout(() => {
-    //   clearInterval(takePhotoInterval)
-    //   setModalVisible(true)
-    // }, 6000)
-    // setTimeout(() => {
-    //   clearInterval(takePhotoInterval)
-    //   setModalVisible(true)
-    // }, 15240)
-    // setTimeout(() => {
-    //   clearInterval(takePhotoInterval)
-    //   setIsDetected(true)
-    // }, 22500)
+    takePhotoInterval = setInterval(takePhoto, 1000)
+    setTimeout(() => {
+      clearInterval(takePhotoInterval)
+      setModalVisible(true)
+    }, 6000)
+    setTimeout(() => {
+      clearInterval(takePhotoInterval)
+      setModalVisible(true)
+    }, 15240)
+    setTimeout(() => {
+      clearInterval(takePhotoInterval)
+      setIsDetected(true)
+    }, 22500)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
